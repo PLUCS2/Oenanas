@@ -25,13 +25,13 @@ export const receiveErrors = errors => {
 }
 
 export const loginUser = user => dispatch => {
-    login(user).then(user => dispatch(receiveCurrentUser(user)))
+   return login(user).then(user => dispatch(receiveCurrentUser(user)))
 }
 
 export const logoutUser = () => dispatch => {
-    logout().then(() => dispatch(logoutCurrentUser()))
+    return logout().then(() => dispatch(logoutCurrentUser()))
 }
 
 export const signupUser = user => dispatch => {
-    signup(user).then(user => dispatch(receiveCurrentUser(user)))
+    return signup(user).then(user => dispatch(receiveCurrentUser(user)))
 }
