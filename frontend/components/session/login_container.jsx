@@ -4,6 +4,12 @@ import { loginUser } from '../../actions/session_actions';
 import Login from './login'; 
 import { openModal, closeModal } from '../../actions/modal_actions'; 
 
+const mapStateToProps = state => {
+    return {
+         currentUser: state.session.currentUserId
+    }
+}
+
 const mapDispatchToProps = dispatch => {
     return {
         loginUser: user => dispatch(loginUser(user)), 
@@ -16,4 +22,4 @@ const mapDispatchToProps = dispatch => {
     }
 }
 
-export default connect(null, mapDispatchToProps)(Login)
+export default connect(mapStateToProps, mapDispatchToProps)(Login)

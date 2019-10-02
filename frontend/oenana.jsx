@@ -6,7 +6,6 @@ import Root from './components/root';
 document.addEventListener("DOMContentLoaded", () => {
     let store; 
 
-    // window.getState = store.getState; 
     // window.dispatch = store.dispatch; 
 
     // user auth - if there is a current user, lets set the session current user to current user 
@@ -27,6 +26,8 @@ document.addEventListener("DOMContentLoaded", () => {
     } else {
         store = configureStore(); 
     }
+
+    window.getState = store.getState; 
     
     const root = document.getElementById("root"); 
     ReactDOM.render(<Root store={store} />, root)

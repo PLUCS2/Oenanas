@@ -11,7 +11,7 @@ export default () => {
     return(
         <div>
             <Modal /> 
-            <Route exact path="/" component={SplashContainer} />
+            <AuthRoute exact path="/" component={SplashContainer} />
             {/* <AuthRoute exact path="/signup" component={SignUpContainer} />
             <AuthRoute exact path="/login" component={LoginContainer} />  */}
             <ProtectedRoute exact path="/home" component={HomeContainer} /> 

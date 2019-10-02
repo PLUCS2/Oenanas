@@ -1,4 +1,5 @@
 import React from 'react';
+import { Redirect } from 'react-router-dom'; 
 
 class Login extends React.Component {
 
@@ -22,10 +23,16 @@ class Login extends React.Component {
 
     handleSubmit(e) {
         e.preventDefault; 
-        this.props.loginUser({user: this.state}).then( () => this.props.history.push('/home'))
+        // debugger; 
+        this.props.loginUser({user: this.state}).then(() => this.props.closeModal())
+        // .then(() => this.props.history.push('/home'))
     }
 
     render() {
+        // if (this.state.currentUser){
+        //     <Redirect to="/home" /> 
+        // }
+
         return(
             <div className="login-form-container">
                 <form>
