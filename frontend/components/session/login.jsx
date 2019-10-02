@@ -39,7 +39,12 @@ class Login extends React.Component {
                     </label>
 
                     <button type="submit" onClick={this.handleSubmit}>Login</button>
+
                 </form>
+
+                <button onClick={this.props.closeModal}>X</button>
+                {this.props.otherForm} 
+                
             </div>
         )
     }

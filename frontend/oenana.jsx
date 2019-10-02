@@ -4,7 +4,7 @@ import configureStore from './store/store';
 import Root from './components/root'; 
 
 document.addEventListener("DOMContentLoaded", () => {
-    let store = configureStore(); 
+    let store; 
 
     // window.getState = store.getState; 
     // window.dispatch = store.dispatch; 
@@ -13,7 +13,7 @@ document.addEventListener("DOMContentLoaded", () => {
     if (window.currentUser) {
         const preloadedState = {
             session: {
-                currentUser: window.currentUser
+                currentUserId: window.currentUser.id
             },
             entities: {
                 users: {
@@ -22,6 +22,7 @@ document.addEventListener("DOMContentLoaded", () => {
             }
         }
         store = configureStore(preloadedState); 
+        // debugger; 
         delete window.currentUser; 
     } else {
         store = configureStore(); 

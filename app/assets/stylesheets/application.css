@@ -13,3 +13,15 @@
  *= require_tree .
  *= require_self
  */
+
+ .splash-page-body {
+     width: 100%; 
+     height: 1000px; 
+     background-color: lavender; 
+     display: flex; 
+     flex-direction: column; 
+ }
+
+ .welcome-page-header {
+    
+ }

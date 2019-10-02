@@ -61,6 +61,10 @@ class Signup extends React.Component {
                 <button type="submit" onClick={this.handleSubmit}>Submit</button>
 
             </form>
+
+            <button onClick={this.props.closeModal}>X</button>
+            {this.props.otherForm} 
+
         </div>
         );
     }

@@ -3,6 +3,7 @@ import React from 'react';
 import SplashBody from './splash_body_container'; 
 import SplashHeader from './splash_header_container'; 
 import SplashFooter from './splash_footer_container'; 
+import Modal from './modal'; 
 
 class Splash extends React.Component {
     
