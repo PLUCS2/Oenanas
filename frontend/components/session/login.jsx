@@ -6,8 +6,8 @@ class Login extends React.Component {
     constructor(props) {
         super(props); 
         this.state = {
-            email: '', 
-            password: ''
+            email: 'name@company.com', 
+            password: 'Password'
         }
 
         this.handleInput = this.handleInput.bind(this); 
@@ -18,6 +18,7 @@ class Login extends React.Component {
     handleInput(field) {
         return (e) => {
             this.setState({[field]: e.target.value})
+            e.target.className = "auth-form-user-input"; 
         }
     }
 
@@ -28,6 +29,12 @@ class Login extends React.Component {
         // .then(() => this.props.history.push('/home'))
     }
 
+    beginInput(field) {
+        return (e) => {
+            this.setState({ [field]: '' })
+        }
+    }
+
     render() {
         // if (this.state.currentUser){
         //     <Redirect to="/home" /> 
@@ -35,22 +42,27 @@ class Login extends React.Component {
 
         return(
             <div className="login-form-container">
-                <form>
 
-                    <label>email: 
-                        <input type="text" value={this.state.email} onChange={this.handleInput("email")} />
+                <h1 className="auth-form-header">
+                    Log in 
+                </h1>
+
+                <form className="login-form">
+
+                    <label className="auth-form-label">Email Address: 
+                        <br></br><input className="auth-form-input" type="text" value={this.state.email} onChange={this.handleInput("email")} onClick={this.beginInput("email")}/>
                     </label>
 
-                    <label>password:
-                        <input type="password" value={this.state.password} onChange={this.handleInput("password")} />
+                    <label className="auth-form-label">Password:
+                        <br></br><input className="auth-form-input" type="password" value={this.state.password} onChange={this.handleInput("password")} onClick={this.beginInput("password")} />
                     </label>
 
-                    <button type="submit" onClick={this.handleSubmit}>Login</button>
+                    <button className="auth-form-submit" type="submit" onClick={this.handleSubmit}>Login</button>
 
                 </form>
 
-                <button onClick={this.props.closeModal}>X</button>
-                {this.props.otherForm} 
+                <button className="modal-x" onClick={this.props.closeModal}>X</button>
+                <h3 className="auth-messages">Don't have an account?{this.props.otherForm} </h3>
                 
             </div>
         )
