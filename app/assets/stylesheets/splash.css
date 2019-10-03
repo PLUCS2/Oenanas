@@ -1,0 +1,78 @@
+ .splash-page-body {
+    width: 100%; 
+    height: 1000px; 
+    background-color:  #fffdfd; 
+    display: flex; 
+    flex-direction: column; 
+    align-items: center; 
+    margin-top: 60px; 
+ }
+
+ .welcome-page-header {
+    font-family: gordita, "Helvetica Neue", Helvetica, sans-serif;
+    font-weight: 400; 
+    font-size: 40px; 
+    margin: 0 auto; 
+    padding: 30px; 
+ }
+
+ .splash-header {
+    position: fixed; 
+    top: 0; 
+    width: 100%; 
+}
+
+.try-for-free {
+    background-color: #796eff;
+    font-size: 15px; 
+    padding: 10px 30px; 
+    margin: 10px; 
+    border: 1px solid lightgray; 
+    border-radius: 4px; 
+    color: whitesmoke; 
+    cursor: pointer; 
+}
+
+.try-for-free:hover {
+    background-color:  #6057c2;
+}
+
+.login-header {
+    background: none; 
+    border: none; 
+    cursor: pointer; 
+    font-size: 14px; 
+    margin: 0px 20px; 
+}
+
+.login-header:hover {
+    color: #6057c2;
+}
+
+.welcome-page-descriptions {
+
+}
+
+.login-signup {
+    /* position: fixed;  */
+    display: flex; 
+    justify-content: flex-end; 
+    background:  #fffdfd; 
+}
+
+.asana-logo {
+    height: 40px; 
+}
+
+.logo-holder {
+    position: absolute; 
+    left: 0; 
+    margin-left: 20px; 
+    margin-top: 10px; 
+    display: flex; 
+}
+
+.oenana-logo {
+    padding: 4px 10px; 
+    font-size: 30px; 
+}

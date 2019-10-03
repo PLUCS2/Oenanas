@@ -1,0 +1,154 @@
+ .modal-background {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.7);
+  z-index: 10;
+  overflow-y: initial; 
+}
+
+.modal-child {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #fffdfd; 
+  width: 650px; 
+  height: 500px; 
+  overflow-y: auto; 
+  border-radius: 5px; 
+}
+
+.auth-form-header {
+    font-family: gordita, "Helvetica Neue", Helvetica, sans-serif;
+    font-weight: 400; 
+    font-size: 40px; 
+    margin: 0 auto; 
+    padding: 30px; 
+}
+
+.login-form-container {
+    display: flex; 
+    flex-direction: column; 
+    align-content: center; 
+    justify-content: space-between; 
+    font-family: gordita, "Helvetica Neue", Helvetica, sans-serif;
+}
+
+.login-form {
+    display: flex; 
+    flex-direction: column; 
+    align-items: center; 
+    justify-content: space-between; 
+}
+
+.login-form input {
+    width: 275px;
+    height: 30px; 
+    margin-top: 10px; 
+    border: 2px solid lightgray; 
+    border-radius: 2px; 
+}
+
+.modal-x {
+    position: fixed; 
+    margin-left: 610px;
+    margin-top: 5px;  
+    padding: 10px; 
+    border: none;
+    cursor: pointer;
+    background: none; 
+    font-size: 20px; 
+}
+
+.auth-form-label {
+    color: rgba(31, 30, 30, 0.781); 
+    padding: 20px; 
+    font-size: 20px; 
+}
+
+.auth-form-input {
+    color: lightgray; 
+    font-size: 15px; 
+    padding: 6px; 
+}
+
+.auth-form-user-input {
+    color:  rgba(31, 30, 30, 0.781);
+    font-size:  15px; 
+    padding: 6px; 
+}
+
+.auth-messages {
+    font-size: 15px; 
+    font-weight: 50; 
+    color: rgb(117, 117, 117); 
+    margin: 0 auto; 
+    padding: 30px; 
+}
+
+.other-modal-form {
+    background: none;
+    border: none; 
+    cursor: pointer;
+    color: #796eff; 
+    font-size: 15px; 
+    font-weight: bold; 
+}
+
+.other-modal-form:hover {
+    text-decoration: underline; 
+}
+
+.auth-form-submit {
+    background-color: #796eff;
+    font-size: 20px; 
+    padding: 15px 115px; 
+    margin: 20px; 
+    border: 1px solid lightgray; 
+    border-radius: 4px; 
+    color: whitesmoke; 
+    cursor: pointer; 
+}
+
+.auth-form-submit:hover {
+    background-color:  #6057c2;
+}
+
+.signup-form-container {
+    display: flex; 
+    flex-direction: column; 
+    align-content: center; 
+    justify-content: space-between; 
+    font-family: gordita, "Helvetica Neue", Helvetica, sans-serif;
+}
+
+.signup-form {
+    display: flex; 
+    flex-direction: column; 
+    align-items: center; 
+    justify-content: space-between; 
+    font-family: gordita, "Helvetica Neue", Helvetica, sans-serif;
+}
+
+.signup-form input {
+    width: 275px;
+    height: 30px; 
+    margin-top: 10px; 
+    border: 2px solid lightgray; 
+    border-radius: 2px; 
+}
+
+.submit-form-label {
+    color: rgba(31, 30, 30, 0.781); 
+    padding: 20px; 
+    font-size: 20px; 
+}
+
+.fl-signup-container {
+    display: flex; 
+    justify-content: space-around; 
+    width: 600px; 
+}

@@ -11,6 +11,10 @@ class SplashHeader extends React.Component {
             {/* <Link to="/login">Login</Link>
             <Link to="/signup">Try For Free</Link> */}
             <nav className="login-signup">
+                <div className="logo-holder">
+                    <img className="asana-logo" src={window.asanaLogo} />
+                    <h4 className="oenana-logo">Oenana</h4>
+                </div>
                 <button className="login-header" onClick={() => this.props.openModal('login')}>Log In</button>
                 <button className="try-for-free" onClick={() => this.props.openModal('signup')}>Try for free</button>
             </nav>
