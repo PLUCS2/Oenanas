@@ -1,21 +1,24 @@
 import React from 'react'; 
 import { connect } from 'react-redux'; 
 import NavBar from './navbar'; 
-import { logoutUser } from '../../actions/session_actions'; 
+import { logoutUser, fetchCurrentUser } from '../../actions/session_actions'; 
 
 const mapStateToProps = state => {
 
-    const user = state.entities.users[state.session.currentUserId] || {}
+    // debugger; 
+    const user = state.entities.users[state.session.currentUserId] || null
     // debugger; 
     
     return{
-        user: user
+        user: user, 
+        currentUserId: state.session.currentUserId 
     }
 }
 
 const mapDispatchToProps = dispatch => {
     return {
-        logoutUser: user => dispatch(logoutUser(user))
+        logoutUser: user => dispatch(logoutUser(user)), 
+        fetchCurrentUser: id => dispatch(fetchCurrentUser(id))
     }
 }
 

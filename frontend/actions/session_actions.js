@@ -1,4 +1,4 @@
-import { login, logout, signup } from '../util/session_api_util'; 
+import { login, logout, signup, fetchUser } from '../util/session_api_util'; 
 
 export const RECEIVE_CURRENT_USER = "RECEIVE_USER"; 
 export const LOGOUT_CURRENT_USER = "LOGOUT_CURRENT_USER"; 
@@ -36,4 +36,8 @@ export const logoutUser = () => dispatch => {
 
 export const signupUser = user => dispatch => {
     return signup(user).then(user => dispatch(receiveCurrentUser(user)), errors => dispatch(receiveErrors(errors.responseJSON)))
+}
+
+export const fetchCurrentUser = id => dispatch => {
+    return fetchUser(id).then(user => dispatch(receiveCurrentUser(user)))
 }
