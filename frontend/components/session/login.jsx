@@ -25,7 +25,7 @@ class Login extends React.Component {
     handleSubmit(e) {
         e.preventDefault; 
         // debugger; 
-        this.props.loginUser({user: this.state}).then(() => this.props.closeModal())
+        this.props.loginUser({user: this.state}).then(() => this.props.closeModal()); 
         // .then(() => this.props.history.push('/home'))
     }
 
@@ -40,6 +40,10 @@ class Login extends React.Component {
         //     <Redirect to="/home" /> 
         // }
 
+        const error = this.props.errors.map((error,idx) => {
+            return <li key={idx} className="errors" >{error}</li>
+        }); 
+
         return(
             <div className="login-form-container">
 
@@ -49,8 +53,10 @@ class Login extends React.Component {
 
                 <form className="login-form">
 
+                    <ul>{error}</ul> 
+
                     <label className="auth-form-label">Email Address: 
-                        <br></br><input className="auth-form-input" type="text" value={this.state.email} onChange={this.handleInput("email")} onClick={this.beginInput("email")}/>
+                        <br></br><input className="auth-form-input" type="email" value={this.state.email} onChange={this.handleInput("email")} onClick={this.beginInput("email")}/>
                     </label>
 
                     <label className="auth-form-label">Password:

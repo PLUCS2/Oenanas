@@ -4,6 +4,12 @@ import { signupUser } from '../../actions/session_actions';
 import Signup from './signup'; 
 import { openModal, closeModal } from '../../actions/modal_actions'; 
 
+const mapStateToProps = state => {
+    return {
+        errors: state.errors.session
+    }
+}
+
 const mapDispatchToProps = dispatch => {
     return{
         signupUser: user => dispatch(signupUser(user)), 
@@ -16,4 +22,4 @@ const mapDispatchToProps = dispatch => {
     }
 }
 
-export default connect(null, mapDispatchToProps)(Signup); 
+export default connect(mapStateToProps, mapDispatchToProps)(Signup); 

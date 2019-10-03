@@ -37,6 +37,11 @@ class Signup extends React.Component {
     }
 
     render() {
+
+        const error = this.props.errors.map((error, idx) => {
+            return <li key={idx} className="errors" >{error}</li>
+        }); 
+
         return(
         <div className="signup-form-container">
 
@@ -46,6 +51,8 @@ class Signup extends React.Component {
                 Sign up
             </h1>
 
+                <ul className="error-holder">{error}</ul>
+                
             <form className="signup-form">
 
                 {/* <div className="fl-signup-container"> */}
@@ -61,11 +68,9 @@ class Signup extends React.Component {
                     <label className="submit-form-label">Role
                         <br></br><input className="auth-form-input" type="text" value={this.state.role} onChange={this.handleInput("role")} onClick={this.beginInput("role")}/>
                     </label>
-                
-
 
                     <label className="submit-form-label">Email
-                        <br></br><input className="auth-form-input" type="text" value={this.state.email} onChange={this.handleInput("email")} onClick={this.beginInput("email")}/>
+                        <br></br><input className="auth-form-input" type="email" value={this.state.email} onChange={this.handleInput("email")} onClick={this.beginInput("email")}/>
                     </label>
 
                     <label className="submit-form-label">Password
