@@ -6,8 +6,8 @@ class Login extends React.Component {
     constructor(props) {
         super(props); 
         this.state = {
-            email: 'name@company.com', 
-            password: 'Password'
+            email: '', 
+            password: ''
         }
 
         this.handleInput = this.handleInput.bind(this); 
@@ -34,11 +34,11 @@ class Login extends React.Component {
         this.props.loginUser({ user: { email: 'demo@demo.com', password: '12345678' } }).then(() => this.props.closeModal()); 
     }
 
-    beginInput(field) {
-        return (e) => {
-            this.setState({ [field]: '' })
-        }
-    }
+    // beginInput(field) {
+    //     return (e) => {
+    //         this.setState({ [field]: '' })
+    //     }
+    // }
 
     render() {
         // if (this.state.currentUser){
@@ -61,11 +61,11 @@ class Login extends React.Component {
                     <ul>{error}</ul> 
 
                     <label className="auth-form-label">Email Address: 
-                        <br></br><input className="auth-form-input" type="email" value={this.state.email} onChange={this.handleInput("email")} onClick={this.beginInput("email")}/>
+                        <br></br><input className="auth-form-input" placeholder="name@company.com" type="email" value={this.state.email} onChange={this.handleInput("email")} />
                     </label>
 
                     <label className="auth-form-label">Password:
-                        <br></br><input className="auth-form-input" type="password" value={this.state.password} onChange={this.handleInput("password")} onClick={this.beginInput("password")} />
+                        <br></br><input className="auth-form-input" placeholder="Password" type="password" value={this.state.password} onChange={this.handleInput("password")} />
                     </label>
 
                     <button className="auth-form-submit" type="submit" onClick={this.handleSubmit}>Login</button>

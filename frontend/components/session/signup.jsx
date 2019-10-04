@@ -6,11 +6,11 @@ class Signup extends React.Component {
         super(props); 
         // debugger; 
         this.state = {
-            email: 'name@company.com', 
-            first_name: 'Jane', 
-            last_name: 'Doe', 
-            password: 'Password', 
-            role: 'CEO'
+            email: '', 
+            first_name: '', 
+            last_name: '', 
+            password: '', 
+            role: ''
         }
         this.handleInput = this.handleInput.bind(this); 
         this.handleSubmit = this.handleSubmit.bind(this); 
@@ -30,11 +30,11 @@ class Signup extends React.Component {
         // then( () => this.props.history.push('/home'))
     }
 
-    beginInput(field) {
-        return (e) => {
-            this.setState({ [field]: '' })
-        }
-    }
+    // beginInput(field) {
+    //     return (e) => {
+    //         this.setState({ [field]: '' })
+    //     }
+    // }
 
     render() {
 
@@ -57,24 +57,24 @@ class Signup extends React.Component {
 
                 {/* <div className="fl-signup-container"> */}
                     <label className="submit-form-label">First Name
-                        <br></br><input className="auth-form-input" type="text" value={this.state.first_name} onChange={this.handleInput("first_name")} onClick={this.beginInput("first_name")}/>
+                        <br></br><input className="auth-form-input" placeholder="Jane" type="text" value={this.state.first_name} onChange={this.handleInput("first_name")} />
                     </label>
 
                     <label className="submit-form-label">Last Name
-                        <br></br><input className="auth-form-input" type="text" value={this.state.last_name} onChange={this.handleInput("last_name")} onClick={this.beginInput("last_name")}/>
+                        <br></br><input className="auth-form-input" placeholder="Doe" type="text" value={this.state.last_name} onChange={this.handleInput("last_name")} />
                     </label>
                 {/* </div> */}
 
                     <label className="submit-form-label">Role
-                        <br></br><input className="auth-form-input" type="text" value={this.state.role} onChange={this.handleInput("role")} onClick={this.beginInput("role")}/>
+                        <br></br><input className="auth-form-input" placeholder="CEO" type="text" value={this.state.role} onChange={this.handleInput("role")} />
                     </label>
 
                     <label className="submit-form-label">Email
-                        <br></br><input className="auth-form-input" type="email" value={this.state.email} onChange={this.handleInput("email")} onClick={this.beginInput("email")}/>
+                        <br></br><input className="auth-form-input" placeholder="name@company.com" type="email" value={this.state.email} onChange={this.handleInput("email")} />
                     </label>
 
                     <label className="submit-form-label">Password
-                        <br></br><input className="auth-form-input" type="password" value={this.state.password} onChange={this.handleInput("password")} onClick={this.beginInput("password")}/>
+                        <br></br><input className="auth-form-input" placeholder="Password" type="password" value={this.state.password} onChange={this.handleInput("password")} />
                     </label>
 
 
