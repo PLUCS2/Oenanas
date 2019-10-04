@@ -83,13 +83,13 @@ class NavBar extends React.Component {
                 <div className="add-new">
                     <button className="plus-button" onClick={this.toggleAdds}>+</button>
                     <div className="add-drop-content" id="add-drop-content">
-                        <Link to="/project/new" onClick={(e) => e.stopPropagation()}>Project</Link>
+                        <div className="add-drop-row"><img className="dropdown-wig" src={window.projectWig} /><Link to="/project/new" className="add-link" onClick={(e) => e.stopPropagation()}>Project</Link></div>
                     </div>
                 </div>
 
 
                 <div className="drop-down-menu">
-                    <button className="drop-button" onClick={this.toggleFunction}>{this.state.initials} </button>
+                    <button className="drop-button" onClick={this.toggleFunction}><p>{this.state.initials}</p></button>
                     <div className="drop-content" id="hover-effect">{this.state.userName}</div>
                     <div className="clicked-drop-content" id="click-effect">
                         <button className="logout" type="submit" onClick={this.props.logoutUser.bind(this)}>Logout</button>

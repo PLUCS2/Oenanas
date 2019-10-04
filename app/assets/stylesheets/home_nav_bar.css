@@ -8,7 +8,7 @@
 .drop-down-menu {
   position: relative;
   display: inline-block;
-  padding-right: 20px; 
+  margin-right: 20px; 
 }
 
 .drop-content {
@@ -43,8 +43,17 @@
     color: white; 
     cursor: pointer;
     box-sizing: border-box; 
-    justify-content: center;  
+    text-align: center; 
+    display: inline-flex; 
+    flex-direction: row; 
+    justify-content: left; 
     font-size: 11px; 
+    text-indent: -2px; 
+}
+
+.drop-button p {
+    width: 10px; 
+    text-align: left; 
 }
 
 .drop-button:focus {
@@ -105,6 +114,12 @@
     text-align: center; 
 }
 
+.plus-button:hover {
+    background: linear-gradient(to top right, #ff1f35, #ff4053 35%, #c99701);
+    box-shadow: none;
+    outline: none; 
+}
+
 .plus-button:focus {
     outline: none; 
 }
@@ -112,17 +127,52 @@
 /* + drop down menu styling  */
 .add-drop-content {
     display: none;
+    flex-direction: column; 
     position: absolute;
     background-color: #f9f9f9;
-    min-width: 250px;
+    min-width: 160px;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     z-index: 1;
     right: 0; 
     margin-right: 20px;
-    border-radius: 8px; 
+    border-radius: 5px; 
     border: 1px solid #edf1f2;
 }
 
 .show {
-    display: block; 
+    display: flex; 
+}
+
+.dropdown-wig {
+    width: 15px;
+    height: 15px; 
+    padding: 10px 5px 10px 10px; 
+    color: inherit; 
+}
+
+.add-link {
+    padding: 10px 10px 10px 5px; 
+    text-decoration: none; 
+    color: inherit; 
+}
+
+.add-drop-row {
+    margin: 8px 0px; 
+    width: 100%; 
+    display: flex; 
+    flex-direction: row; 
+    align-content: center; 
+    font-size: 13px; 
+    color: #151b26;
+    cursor: pointer;
+}
+
+.add-drop-row:hover {
+    background: linear-gradient(45deg, #ff5263 0%, #ff7381 60%, #fcbd01 115%);
+    color: #fff;
+    text-decoration: none; 
+}
+
+.add-drop-row:hover > .dropdown-wig {
+    filter: invert(100%); 
 }
