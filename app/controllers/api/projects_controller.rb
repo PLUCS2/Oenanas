@@ -15,6 +15,7 @@ class Api::ProjectsController < ApplicationController
 
     def create 
         @project = Project.create(project_params)
+        @project.owner_id = current_user.id 
         if @project.save!
             render :show
         else 
