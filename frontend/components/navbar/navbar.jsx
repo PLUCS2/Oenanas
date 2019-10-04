@@ -1,4 +1,5 @@
 import React from 'react'; 
+import { Link } from 'react-router-dom'; 
 
 class NavBar extends React.Component {
     constructor(props) {
@@ -26,6 +27,7 @@ class NavBar extends React.Component {
 
         this.toggleFunction = this.toggleFunction.bind(this); 
         this.closeLogout = this.closeLogout.bind(this); 
+        this.toggleAdds = this.toggleAdds.bind(this); 
     }
 
     // componentDidMount() {
@@ -43,7 +45,26 @@ class NavBar extends React.Component {
         document.addEventListener("click", this.closeLogout);
     }
 
+    toggleAdds(e) {
+        e.preventDefault(); 
+        // debugger; 
+        document.getElementById("add-drop-content").classList.toggle("show"); 
+        // debugger; 
+        document.addEventListener("click", this.closeAdds); 
+    }
+
+    closeAdds(e) {
+        e.preventDefault(); 
+        // debugger; 
+        if(!e.target.matches(".add-new")) {
+            document.getElementById("add-drop-content").className = "add-drop-content"; 
+            document.removeEventListener("click", this.closeAdds); 
+            // debugger; 
+        }
+    }
+
     closeLogout(e) {
+        e.preventDefault();
         if(!e.target.matches(".drop-down-menu")){
             // debugger; 
             document.getElementById("click-effect").className = "clicked-drop-content"; 
@@ -58,9 +79,16 @@ class NavBar extends React.Component {
             <div className="home-nav-bar">
                 {/* <h2>THIS IS THE HOME NAV BAR</h2> */}
                 {/* <h3>{this.state.currentUser}</h3> */}
+                <div className="add-new">
+                    <button className="plus-button" onClick={this.toggleAdds}>+</button>
+                    <div className="add-drop-content" id="add-drop-content">
+                        <Link to="/project/new">Project</Link>
+                    </div>
+                </div>
+
 
                 <div className="drop-down-menu">
-                    <button className="drop-button" onClick={this.toggleFunction} >{this.state.initials}</button>
+                    <button className="drop-button" onClick={this.toggleFunction}>{this.state.initials}</button>
                     <div className="drop-content" id="hover-effect">{this.state.userName}</div>
                     <div className="clicked-drop-content" id="click-effect">
                         <button className="logout" type="submit" onClick={this.props.logoutUser.bind(this)}>Logout</button>
