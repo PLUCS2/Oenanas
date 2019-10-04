@@ -1,26 +1,26 @@
 
-const fetchProject = id => {
+export const fetchProject = id => {
     return $.ajax({
         method: "GET", 
         url: `/api/projects/${id}`
     })
 }
 
-const fetchProjects = () => {
+export const fetchProjects = () => {
     return $.ajax({
         method: "GET", 
         url: "/api/projects"
     })
 }
 
-const destroyProject = id => {
+export const destroyProject = id => {
     return $.ajax({
         method: "DELETE", 
         url: `/api/projects/${id}`
     })
 }
 
-const editProject = project => {
+export const editProject = project => {
     return $.ajax({
         method: "PATCH", 
         url: `/api/projects/${project.id}`, 
@@ -28,10 +28,11 @@ const editProject = project => {
     })
 }
 
-const createProject = project => {
+export const createProject = project => {
     return $.ajax({
         method: "POST", 
         url: "/api/projects", 
         data: project 
     })
 }
+

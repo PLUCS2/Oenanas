@@ -15,7 +15,7 @@ class Api::ProjectsController < ApplicationController
 
     def create 
         @project = Project.create(project_params)
-        if project.save!
+        if @project.save!
             render :show
         else 
             render json: @project.errors.full_messages, status: 422
@@ -23,17 +23,19 @@ class Api::ProjectsController < ApplicationController
     end 
 
     def update 
-        @project = Project.find(params[:id]) 
-        if @params.update_attributes(project_params)
+        @project = Project.find(params[:project][:id]) 
+        if @project.update_attributes(project_params)
             render :show 
         else 
-            json: @project.errors.full_messages, status: 422
+            render json: @project.errors.full_messages, status: 422
         end 
     end 
 
     def destroy 
+        # debugger
         @project = Project.find(params[:id])
         @project.destroy
+        @user = current_user
         render 'api/users/show'
     end
 
