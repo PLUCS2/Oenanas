@@ -9,6 +9,8 @@ Rails.application.routes.draw do
 
     resource :session, only: [:create, :destroy]
 
+    resources :projects, only: [:index, :create, :destroy, :show, :update]
+
   end 
 
 end

@@ -56,7 +56,7 @@ class NavBar extends React.Component {
     render() {
         return (
             <div className="home-nav-bar">
-                <h2>THIS IS THE HOME NAV BAR</h2>
+                {/* <h2>THIS IS THE HOME NAV BAR</h2> */}
                 {/* <h3>{this.state.currentUser}</h3> */}
 
                 <div className="drop-down-menu">
