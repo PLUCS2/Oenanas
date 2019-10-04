@@ -28,6 +28,7 @@ class NavBar extends React.Component {
         this.toggleFunction = this.toggleFunction.bind(this); 
         this.closeLogout = this.closeLogout.bind(this); 
         this.toggleAdds = this.toggleAdds.bind(this); 
+        this.closeAdds = this.closeAdds.bind(this);
     }
 
     // componentDidMount() {
@@ -35,7 +36,7 @@ class NavBar extends React.Component {
     // }
 
     toggleFunction(e) {
-        e.preventDefault; 
+        e.preventDefault(); 
         document.getElementById("click-effect").classList.toggle("show"); 
         if (document.getElementById("hover-effect").className === "hide") {
             document.getElementById("hover-effect").className = "drop-content"
