@@ -74,8 +74,6 @@ class Login extends React.Component {
                 
                     <button className="other-modal-form" onClick={this.loginDemo}>Demo User</button>
 
-                    <button className="other-modal-form" onClick={this.loginDemo}>Demo User</button>
-
                 <button className="modal-x" onClick={this.props.closeModal}>X</button>
                 <h3 className="auth-messages">Don't have an account?{this.props.otherForm} </h3>
                 
