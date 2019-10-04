@@ -25,8 +25,6 @@ function Modal ({ modal, closeModal, receiveErrors }) {
             return null; 
     }
 
-    console.log("hello"); 
-
     receiveErrors([]); 
 
     return (
