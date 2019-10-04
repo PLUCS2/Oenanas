@@ -18,8 +18,6 @@ export const receiveProjects = projects => {
     }
 }
 
-export const 
-
 export const makeProject = project => dispatch => {
     return createProject(project).then(project => dispatch(receiveProject(project)))
 }
