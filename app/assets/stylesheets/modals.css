@@ -107,6 +107,7 @@
 
 .other-modal-form:hover {
     text-decoration: underline; 
+    outline: none; 
 }
 
 .auth-form-submit {
