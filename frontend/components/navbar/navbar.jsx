@@ -31,10 +31,6 @@ class NavBar extends React.Component {
         this.closeAdds = this.closeAdds.bind(this);
     }
 
-    // componentDidMount() {
-    //     this.props.fetchUser(this.props.currentUserId)
-    // }
-
     toggleFunction(e) {
         e.preventDefault(); 
         document.getElementById("click-effect").classList.toggle("show"); 
@@ -57,7 +53,7 @@ class NavBar extends React.Component {
     closeAdds(e) {
         e.preventDefault(); 
         // debugger; 
-        if(!e.target.matches(".add-new")) {
+        if(!e.target.matches(".add-new") && e.target.nodeName != "A") {
             document.getElementById("add-drop-content").className = "add-drop-content"; 
             document.removeEventListener("click", this.closeAdds); 
             // debugger; 
@@ -75,6 +71,10 @@ class NavBar extends React.Component {
         }
     }
 
+    componentWillUnmount() {
+        document.removeEventListener("click", this.closeAdds); 
+    }
+
     render() {
         return (
             <div className="home-nav-bar">
@@ -83,7 +83,7 @@ class NavBar extends React.Component {
                 <div className="add-new">
                     <button className="plus-button" onClick={this.toggleAdds}>+</button>
                     <div className="add-drop-content" id="add-drop-content">
-                        <Link to="/project/new">Project</Link>
+                        <Link to="/project/new" onClick={(e) => e.stopPropagation()}>Project</Link>
                     </div>
                 </div>
 
