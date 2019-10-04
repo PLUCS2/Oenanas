@@ -12,7 +12,7 @@ class Login extends React.Component {
 
         this.handleInput = this.handleInput.bind(this); 
         this.handleSubmit = this.handleSubmit.bind(this); 
-
+        this.loginDemo = this.loginDemo.bind(this); 
     }
 
     handleInput(field) {
@@ -27,6 +27,11 @@ class Login extends React.Component {
         // debugger; 
         this.props.loginUser({user: this.state}).then(() => this.props.closeModal()); 
         // .then(() => this.props.history.push('/home'))
+    }
+
+    loginDemo(e) {
+        e.preventDefault; 
+        this.props.loginUser({ user: { email: 'demo@demo.com', password: '12345678' } }).then(() => this.props.closeModal()); 
     }
 
     beginInput(field) {
@@ -64,6 +69,8 @@ class Login extends React.Component {
                     </label>
 
                     <button className="auth-form-submit" type="submit" onClick={this.handleSubmit}>Login</button>
+
+                    <button className="other-modal-form" onClick={this.loginDemo}>Demo User</button>
 
                 </form>
 
