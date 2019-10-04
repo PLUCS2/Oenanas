@@ -154,6 +154,7 @@
     padding: 10px 10px 10px 5px; 
     text-decoration: none; 
     color: inherit; 
+    width: 100%; 
 }
 
 .add-drop-row {

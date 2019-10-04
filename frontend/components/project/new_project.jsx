@@ -33,34 +33,45 @@ class NewProject extends React.Component {
         this.props.createProject({project: this.state}).then(() => this.props.history.push('/home')); 
     }
 
+    // componentDidMount() {
+    //     // document.newProjectForm.title.focus(); 
+    // }
+
     render() {
         return (
         <div className="new-project-form-container"> 
 
-            <form className="new-project-form">
+            <h1 className="form-header" >Add project details</h1>
 
-                <label>Project name
-                    <input type="text" value={this.state.title} onChange={this.handleInput("title").bind(this)} />
+            <form className="new-project-form" id="newProjectForm">
+
+                <label className="main-labels">Project name
+                    <br></br><input className="new-input-title" type="text" value={this.state.title} id="title" onChange={this.handleInput("title").bind(this)} />
                 </label>
 
-                <label>Description 
-                    <input type="text" value={this.state.description} onChange={this.handleInput("description").bind(this)} />
+                <label className="main-labels">Description 
+                    <br></br><input className="new-input-description" type="text" value={this.state.description} onChange={this.handleInput("description").bind(this)} />
                 </label>
 
                 <div className="list-board-selector">
-                    <label>Default view</label>
-                    <label>List
+                    <label className="main-labels">Default view</label><br></br>
+                    <label>
                         <input type="radio" id="list" value={'list'} checked={this.state.default_view === "list"} onChange={this.checker('list').bind(this)} />
+                        <img className="dropdown-wig" src={window.listWig} />List
                     </label>
 
-                    <label>Board
+                    <br></br><label>
                         <input type="radio" id="board" value={'board'} checked={this.state.default_view === "board"} onChange={this.checker('board').bind(this)}/>
+                        <img className="dropdown-wig" src={window.boardWig} />Board
                     </label>
 
                 </div>
 
-                <button type="submit" disabled={this.state.title.length < 1} onClick={this.handleSubmit}>Create Project</button>
+                <button className="create-project-button" type="submit" disabled={this.state.title.length < 1} onClick={this.handleSubmit}>Create Project</button>
             </form>
+
+                {/* puts cursor in title field on load:  */}
+                {/* <script type="text/javascript">{document.newProjectForm.title.focus()}</script>  */}
 
         </div>
         ); 

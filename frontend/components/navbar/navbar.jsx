@@ -9,7 +9,7 @@ class NavBar extends React.Component {
             let firstI = props.user.first_name[0];
             let secondI = props.user.last_name[0];
             let initals = firstI + secondI;
-            let userName = props.user.first_name + props.user.last_name; 
+            let userName = props.user.first_name + " " + props.user.last_name; 
             this.state = {
                 initials: initals, 
                 userName: userName
@@ -18,7 +18,7 @@ class NavBar extends React.Component {
             let firstI = props.user.firstName[0];
             let secondI = props.user.lastName[0];
             let initals = firstI + secondI;
-            let userName = props.user.firstName + props.user.lastName; 
+            let userName = props.user.firstName + " " + props.user.lastName; 
             this.state = {
                 initials: initals, 
                 userName: userName

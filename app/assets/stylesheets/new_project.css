@@ -1,0 +1,60 @@
+.new-project-form-container {
+    height: 450px;
+    width: 450px; 
+    margin: 0 auto; 
+    padding: 150px 0px; 
+    display: flex; 
+    flex-direction: column; 
+    justify-content: space-between; 
+    align-content: left; 
+}
+
+.form-header {
+    font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-size: 24px;
+    font-weight: 500;
+    line-height: 32px;
+}
+
+.new-project-form {
+    height: 350px; 
+    display: flex; 
+    flex-direction: column; 
+    justify-content: space-between; 
+    align-content: left; 
+}
+
+.main-labels {
+    color: #848f99;
+    font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 18px;
+}
+
+.new-input-title {
+    margin: 15px 0px; 
+    padding: 10px; 
+    width: 60%; 
+}
+
+.new-input-description {
+    margin: 15px 0px; 
+    padding: 10px; 
+    width: 90%; 
+    height: 50px; 
+}
+
+.create-project-button:disabled {
+    background: #edf1f2; 
+    border-color: #eff2f3; 
+}
+
+.create-project-button {
+    width: 100%; 
+    height: 40px; 
+    background-color: #14aaf5;
+    border-color: #14aaf5;
+    padding: 0; 
+    color: #fafbfb; 
+}
