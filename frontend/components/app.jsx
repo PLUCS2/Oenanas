@@ -16,8 +16,8 @@ export default () => {
             {/* <AuthRoute exact path="/signup" component={SignUpContainer} />
             <AuthRoute exact path="/login" component={LoginContainer} />  */}
             <ProtectedRoute exact path="/home" component={HomeContainer} /> 
-            {/* <ProtectedRoute exact path="/projects/:projectId/list" component={ProjectListContainer} /> 
-            <ProtectedRoute exact path="/projects/:projectId/board" component={ProjectBoardContainer} /> */}
+            {/* <ProtectedRoute exact path="/projects/:projectId/list" component={ProjectListContainer} />  */}
+            {/* <ProtectedRoute exact path="/projects/:projectId/board" component={ProjectBoardContainer} /> */}
             <ProtectedRoute exact path="/project/new" component={NewProjectContainer} /> 
         </div>    
     );
