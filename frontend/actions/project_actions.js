@@ -5,6 +5,7 @@ export const RECEIVE_PROJECT = "RECEIVE_PROJECT";
 export const RECEIVE_PROJECTS = "RECEIVE_PROJECTS"; 
 
 export const receiveProject = project => {
+    // debugger; 
     return {
         type: RECEIVE_PROJECT, 
         project
@@ -12,6 +13,7 @@ export const receiveProject = project => {
 }
 
 export const receiveProjects = projects => {
+    // debugger; 
     return {
         type: RECEIVE_PROJECTS, 
         projects

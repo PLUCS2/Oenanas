@@ -104,3 +104,18 @@
 .asana-background {
     width: 100%; 
 }
+
+.footer-container {
+    background-color: #383a4f; 
+    display: flex; 
+    justify-content: space-around; 
+    align-content: center; 
+    margin: -5px; 
+    height: 40px; 
+}
+
+.footer-link {
+    padding: 10px; 
+    text-decoration: none; 
+    color: #fffdfd;
+}
