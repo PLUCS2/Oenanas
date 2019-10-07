@@ -1,5 +1,7 @@
 import React from 'react'; 
 import NavBarContainer from '../navbar/navbar_container'; 
+import { Link } from 'react-router-dom'; 
+
 
 class Home extends React.Component {
 
@@ -33,8 +35,8 @@ class Home extends React.Component {
             )} else {
                 return (
                     <li key={project.id} className="project-list-item">
-                        <img className="board-image" src={window.boardWig} /><br></br>
-                        {project.title}
+                        <Link to={`/projects/${project.id}/board`}><img className="board-image" src={window.boardWig} /><br></br>
+                            {project.title}</Link>
                     </li>
             )}
         })
