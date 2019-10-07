@@ -64,9 +64,9 @@
 }
 
 .project-heading {
-    position: absolute; 
-    top: 15px; 
-    left: 40px; 
+    position: relative; 
+    top: -40px; 
+    left: 70px; 
     font-family: inherit; 
     display: flex; 
     width: 100%;

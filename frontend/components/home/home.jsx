@@ -46,14 +46,17 @@ class Home extends React.Component {
             <div className="home-page">
                 <NavBarContainer /> 
                 <HomeSidebarContainer /> 
-            <div className="recent-dropdown">
-                    <button className="home-page-heading" onClick={this.dropProjects}><img id="header-image" className="home-header turn" src={window.homeHeader} />Recent Projects</button>
-                <div id="home-page-projects" className="home-page-projects show">
-                    <ul className="projects-list"> 
-                        {project}
-                    </ul>  
+            {/* <div id="main" className="main"> */}
+            <h1 id="main" className="main-home-page-heading">Home</h1>
+                <div className="recent-dropdown">
+                        <button className="home-page-heading" onClick={this.dropProjects}><img id="header-image" className="home-header turn" src={window.homeHeader} />Recent Projects</button>
+                    <div id="home-page-projects" className="home-page-projects show">
+                        <ul className="projects-list"> 
+                            {project}
+                        </ul>  
+                    </div>
                 </div>
-            </div>
+            {/* </div> */}
             </div>
         )
     }

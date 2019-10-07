@@ -76,3 +76,15 @@
     padding-right: 0px; 
     padding-top: 5px; 
 }
+
+.main-home-page-heading {
+    font-family: inherit; 
+    font-size: 25px;   
+    padding: 20px;  
+    margin-top: -60px; 
+    margin-left: 40px; 
+}
+
+.main-with-sidebar {
+    margin-left: 250px; 
+}

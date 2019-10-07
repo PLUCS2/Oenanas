@@ -1,5 +1,6 @@
 import React from 'react'; 
-import NavBarContainer from '../navbar/navbar_container'; 
+import NavBarContainer from '../navbar/navbar_container';
+import HomeSidebaContainer from '../home_side_bar/home_sidebar_container';  
 
 class ProjectBoard extends React.Component {
 
@@ -41,17 +42,20 @@ class ProjectBoard extends React.Component {
         return (
             <div>
                 <NavBarContainer /> 
-                <div className="project-heading">
-                    <img className="board-image-header" src={window.boardWig} />
-                    <div className="project-name"><h1>{this.props.project.title}<img className="project-dropdown-image" src={window.projectNameDropdown} onClick={this.projectDropdown} /></h1>
-                        <div className="hover-project-effect" id="hover-project-effect">Project Actions</div></div>
-                    <div className="project-name-dropdown" id="project-name-dropdown">
-                        <ul className="project-name-dropdown-list">
-                            <li>EDIT PROJECT DETAILS</li>
-                            <li>DELETE PROJECT</li>
-                        </ul>
+                <HomeSidebaContainer /> 
+                <div id="main" className="main">
+                    <div className="project-heading">
+                        <img className="board-image-header" src={window.boardWig} />
+                        <div className="project-name"><h1>{this.props.project.title}<img className="project-dropdown-image" src={window.projectNameDropdown} onClick={this.projectDropdown} /></h1>
+                            <div className="hover-project-effect" id="hover-project-effect">Project Actions</div></div>
+                        <div className="project-name-dropdown" id="project-name-dropdown">
+                            <ul className="project-name-dropdown-list">
+                                <li>EDIT PROJECT DETAILS</li>
+                                <li>DELETE PROJECT</li>
+                            </ul>
+                        </div>
+                        <p className="board-date">created on {Date(this.props.project.created_at)}</p>
                     </div>
-                    <p className="board-date">created on {Date(this.props.project.created_at)}</p>
                 </div>
             </div>
         )

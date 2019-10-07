@@ -13,6 +13,7 @@ class HomeSidebar extends React.Component {
         document.getElementById("sidebar-content").classList.toggle("show-home-sidebar");
         document.getElementById("sidebar-button").classList.toggle("on-sidebar-button");
         document.getElementById("sidebar-button-on").classList.toggle("sidebar-button-on");
+        document.getElementById("main").classList.toggle("main-with-sidebar"); 
     }
 
     render () {
