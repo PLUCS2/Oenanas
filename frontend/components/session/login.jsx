@@ -23,14 +23,14 @@ class Login extends React.Component {
     }
 
     handleSubmit(e) {
-        e.preventDefault; 
+        e.preventDefault(); 
         // debugger; 
         this.props.loginUser({user: this.state}).then(() => this.props.closeModal()); 
         // .then(() => this.props.history.push('/home'))
     }
 
     loginDemo(e) {
-        e.preventDefault; 
+        e.preventDefault(); 
         this.props.loginUser({ user: { email: 'demo@demo.com', password: '12345678' } }).then(() => this.props.closeModal()); 
     }
 

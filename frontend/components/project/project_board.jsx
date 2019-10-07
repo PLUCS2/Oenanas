@@ -26,7 +26,7 @@ class ProjectBoard extends React.Component {
     } 
 
     closeProjectDropdown(e){
-        e.preventDefault; 
+        e.preventDefault(); 
         if (!e.target.matches(".project-name-dropdown")) {
             // debugger; 
             document.getElementById("project-name-dropdown").className = "project-name-dropdown";

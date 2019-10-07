@@ -1,5 +1,6 @@
 import React from 'react'; 
 import NavBarContainer from '../navbar/navbar_container'; 
+import HomeSidebarContainer from '../home_side_bar/home_sidebar_container'; 
 import { Link } from 'react-router-dom'; 
 
 
@@ -44,7 +45,7 @@ class Home extends React.Component {
         return(
             <div className="home-page">
                 <NavBarContainer /> 
-
+                <HomeSidebarContainer /> 
             <div className="recent-dropdown">
                     <button className="home-page-heading" onClick={this.dropProjects}><img id="header-image" className="home-header turn" src={window.homeHeader} />Recent Projects</button>
                 <div id="home-page-projects" className="home-page-projects show">

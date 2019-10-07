@@ -1,0 +1,74 @@
+.side-bar-content {
+    display: none; 
+    position: absolute; 
+    flex-direction: column; 
+    width: 18%; 
+    height: 100%;
+    color: white; 
+    background-color: #383a4f; 
+    top: 0; 
+}
+
+.show-home-sidebar {
+    display: flex; 
+}
+
+.sidebar-list-image {
+    height: 15px; 
+    width: 15px; 
+    border: none; 
+    outline: none; 
+    outline: none; 
+}
+
+.side-bar-button {
+    outline: none; 
+    background: none; 
+    border: none; 
+    cursor: pointer;
+    color: black; 
+    position: absolute; 
+    top: 20px; 
+    left: 15px; 
+}
+
+.sidebar-button-on {
+    filter: invert(100%);
+}
+
+.on-sidebar-button {
+    /* filter: invert(100%);  */
+    z-index: 5; 
+    position: absolute; 
+    top: 20px; 
+    left: 210px; 
+    background: #383a4f; 
+    outline: none; 
+    border: none; 
+    cursor: pointer; 
+}
+
+.side-bar-link {
+    color: white; 
+    outline: none; 
+}
+
+.asana-side-bar-logo {
+    height: 30px; 
+    width: 30px; 
+    padding: 15px 10px; 
+    background: #383a4f; 
+}
+
+.side-bar-logo-container {
+    display: flex; 
+    flex-direction: row; 
+}
+
+.oenana-sidebar-logo {
+    padding: 25px 5px; 
+}
+
+.side-bar-link {
+    padding: 10px 15px; 
+}

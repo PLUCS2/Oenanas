@@ -16,7 +16,7 @@ class NewProject extends React.Component {
 
     checker(field) {
        return (e) => {
-           e.preventDefault; 
+           e.preventDefault(); 
            this.setState({default_view: field})
         //    debugger; 
        }
@@ -24,14 +24,14 @@ class NewProject extends React.Component {
 
     handleInput(field) {
         return (e) => {
-            e.preventDefault; 
+            e.preventDefault(); 
             this.setState({[field]: e.target.value})
             // debugger; 
         }
     }
 
     handleSubmit(e) {
-        e.preventDefault; 
+        e.preventDefault(); 
         this.props.createProject({project: this.state}).then(() => this.props.history.push('/home')); 
     }
 

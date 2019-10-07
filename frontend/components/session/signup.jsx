@@ -25,7 +25,7 @@ class Signup extends React.Component {
 
     handleSubmit(e) {
         // debugger; 
-        e.preventDefault; 
+        e.preventDefault(); 
         this.props.signupUser({ user: this.state }).then(() => this.props.closeModal()); 
         // then( () => this.props.history.push('/home'))
     }
