@@ -19,7 +19,7 @@ class NewProject extends React.Component {
        return (e) => {
            e.preventDefault(); 
            this.setState({default_view: field})
-           debugger; 
+        //    debugger; 
        }
     }
 
