@@ -15,8 +15,8 @@ class SplashHeader extends React.Component {
                     <img className="asana-logo" src={window.asanaLogo} />
                     <h4 className="oenana-logo">Oenana</h4>
                 </div>
-                <button className="login-header" onClick={() => this.props.openModal('login')}>Log In</button>
-                <button className="try-for-free" onClick={() => this.props.openModal('signup')}>Try for free</button>
+                <button className="login-header" onClick={() => this.props.openModal({modal: 'login'})}>Log In</button>
+                <button className="try-for-free" onClick={() => this.props.openModal({modal: 'signup'})}>Try for free</button>
             </nav>
         </div>
         )

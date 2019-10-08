@@ -35,7 +35,7 @@ class EditProject extends React.Component {
                     </label>
 
                     <label>Owned By 
-                        <h6>{this.props.project.owner}</h6>
+                        <h6>PROJECT CREATOR (Once teams exist)</h6>
                     </label>
 
                     <label>Description

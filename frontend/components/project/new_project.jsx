@@ -1,4 +1,5 @@
 import React from 'react'; 
+import { Link } from 'react-router-dom'; 
 
 class NewProject extends React.Component {
 
@@ -18,7 +19,7 @@ class NewProject extends React.Component {
        return (e) => {
            e.preventDefault(); 
            this.setState({default_view: field})
-        //    debugger; 
+           debugger; 
        }
     }
 
@@ -26,7 +27,9 @@ class NewProject extends React.Component {
         return (e) => {
             e.preventDefault(); 
             this.setState({[field]: e.target.value})
-            // debugger; 
+            if (field === "title" && e.target.value === ""){
+                document.getElementById("title").classList.toggle("empty-error")
+            }
         }
     }
 
@@ -35,20 +38,22 @@ class NewProject extends React.Component {
         this.props.createProject({project: this.state}).then(() => this.props.history.push('/home')); 
     }
 
-    // componentDidMount() {
-    //     // document.newProjectForm.title.focus(); 
-    // }
+    componentDidMount() {
+        document.getElementById("title").focus(); 
+    }
 
     render() {
         return (
+        <div>
+            <Link to="/home" className="cancel-new-form-button" onClick={(e) => e.stopPropagation()}>X</Link>
         <div className="new-project-form-container"> 
 
-            <h1 className="form-header" >Add project details</h1>
+            <h1 className="form-header">Add project details</h1>
 
             <form className="new-project-form" id="newProjectForm">
 
                 <label className="main-labels">Project name
-                    <br></br><input className="new-input-title" type="text" value={this.state.title} id="title" onChange={this.handleInput("title").bind(this)} />
+                    <br></br><input id="title" className="new-input-title" type="text" value={this.state.title} id="title" onChange={this.handleInput("title").bind(this)} />
                 </label>
 
                 <label className="main-labels">Description 
@@ -57,14 +62,14 @@ class NewProject extends React.Component {
 
                 <div className="list-board-selector">
                     <label className="main-labels">Default view</label><br></br>
-                    <label>
+                    <label className="radio-label">
                         <input type="radio" id="list" value={'list'} checked={this.state.default_view === "list"} onChange={this.checker('list').bind(this)} />
-                        <img className="dropdown-wig" src={window.listWig} />List
+                        <img className="newproject-wig" src={window.listWig} />List
                     </label>
 
-                    <br></br><label>
+                    <br></br><label className="radio-label">
                         <input type="radio" id="board" value={'board'} checked={this.state.default_view === "board"} onChange={this.checker('board').bind(this)}/>
-                        <img className="dropdown-wig" src={window.boardWig} />Board
+                        <img className="newproject-wig" src={window.boardWig} />Board
                     </label>
 
                 </div>
@@ -75,6 +80,7 @@ class NewProject extends React.Component {
                 {/* puts cursor in title field on load:  */}
                 {/* <script type="text/javascript">{document.newProjectForm.title.focus()}</script>  */}
 
+        </div>
         </div>
         ); 
     }

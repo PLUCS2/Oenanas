@@ -36,6 +36,7 @@
     margin: 15px 0px; 
     padding: 10px; 
     width: 60%; 
+    outline: none; 
 }
 
 .new-input-description {
@@ -43,6 +44,7 @@
     padding: 10px; 
     width: 90%; 
     height: 50px; 
+    outline: none; 
 }
 
 .create-project-button:disabled {
@@ -57,4 +59,39 @@
     border-color: #14aaf5;
     padding: 0; 
     color: #fafbfb; 
+    cursor: pointer;
+}
+
+.newproject-wig {
+    width: 15px;
+    height: 15px;
+    padding: 10px 5px 0px 10px;
+    color: inherit;
+}
+
+.list-board-selector {
+    margin-bottom: 15px;
+}
+
+.radio-label {
+    font-size: 14px;   
+}
+
+.empty-error {
+    border: 1px solid #fc5263; 
+}
+
+.cancel-new-form-button {
+    position: absolute; 
+    top: 30px; 
+    right: 35px; 
+    outline: none; 
+    border: none; 
+    color: #848f99; 
+    text-decoration: none; 
+    font-size: 20px; 
+}
+
+.cancel-new-form-button:hover {
+    color: black; 
 }

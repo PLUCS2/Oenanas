@@ -51,6 +51,7 @@
     cursor: pointer; 
     font-size: 14px; 
     margin: 0px 20px; 
+    outline: none; 
 }
 
 .login-header:hover {

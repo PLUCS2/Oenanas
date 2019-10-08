@@ -6,6 +6,7 @@ import { updateProject } from '../../actions/project_actions';
 const mapStateToProps = state => {
     // debugger; 
     let project = state.entities.projects[state.ui.modal.props]; 
+
     return {
         project 
     }
@@ -14,7 +15,8 @@ const mapStateToProps = state => {
 const mapDispatchToProps = dispatch => {
     return {
         closeModal: () => dispatch(closeModal()), 
-        updateProject: project => dispatch(updateProject(project))
+        updateProject: project => dispatch(updateProject(project)), 
+
     }
 }
 
