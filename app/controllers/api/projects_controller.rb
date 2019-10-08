@@ -12,6 +12,11 @@ class Api::ProjectsController < ApplicationController
         # debugger
         @project = Project.find(params[:id])
         @sections = @project.sections 
+        @tasks = [] 
+            @sections.each do |section|
+                # debugger
+               @tasks += section.tasks
+            end 
         render :show
     end 
 

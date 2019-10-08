@@ -8,6 +8,7 @@ export default (state = {}, action) => {
             return Object.assign({}, action.projects)
         }
         case RECEIVE_PROJECT: {
+            // debugger; 
             return Object.assign({}, state, {[action.project.id]: action.project})
         }
         default: 
