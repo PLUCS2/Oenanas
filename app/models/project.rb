@@ -21,4 +21,9 @@ class Project < ApplicationRecord
         foreign_key: :owner_id, 
         class_name: :User
 
+    has_many :sections, 
+        primary_key: :id, 
+        foreign_key: :project_id, 
+        class_name: :Section
+
 end 

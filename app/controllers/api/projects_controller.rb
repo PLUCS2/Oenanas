@@ -9,7 +9,9 @@ class Api::ProjectsController < ApplicationController
     end 
 
     def show 
+        debugger
         @project = Project.find(params[:id])
+        @sections = @project.sections 
         render :show
     end 
 
