@@ -9,11 +9,12 @@ class SectionsController < ApplicationController
         @section = Section.create(section_params)
         @section.project_id = params[:project_id]
         @section.save 
-        debugger
+        # debugger
         render "api/projects/#{@section.project_id}"
     end 
 
     def destroy 
+        #I will make this after update
     end 
 
     private 
