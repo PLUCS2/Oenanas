@@ -40,7 +40,7 @@ class ProjectBoard extends React.Component {
     render () {
         // debugger; 
         return (
-            <div>
+            <div className="page">
                 <NavBarContainer /> 
                 <HomeSidebaContainer /> 
                 <div id="main" className="main">
@@ -60,17 +60,21 @@ class ProjectBoard extends React.Component {
             <div className="main board-body">
                 <div className="column-boardview">
                     <h2 className="column-heading-boardview">To Do</h2>
+                    <button className="add-task-button">+</button>
                 </div> 
 
                 <div className="column-boardview">
                     <h2 className="column-heading-boardview">In Progress</h2>
+                    <button className="add-task-button">+</button>
                 </div> 
 
                 <div className="column-boardview">
                     <h2 className="column-heading-boardview">Done</h2>
+                    <button className="add-task-button">+</button>
                 </div> 
 
                 <button className="add-column-board-button">+ Add Column</button>
+
             </div>
                 </div>
 
