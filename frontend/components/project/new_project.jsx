@@ -15,12 +15,14 @@ class NewProject extends React.Component {
         this.handleSubmit = this.handleSubmit.bind(this); 
     }
 
-    checker(field) {
-       return (e) => {
-           e.preventDefault(); 
-           this.setState({default_view: field})
-        //    debugger; 
-       }
+    checker(e) {
+    //    return (e) => {
+    //        e.preventDefault(); 
+    //        this.setState({default_view: field})
+    //        debugger; 
+    //    }
+        e.stopPropagation(); 
+        this.setState({default_view: e.target.value}); 
     }
 
     handleInput(field) {
@@ -43,6 +45,7 @@ class NewProject extends React.Component {
     }
 
     render() {
+        debugger; 
         return (
         <div>
             <Link to="/home" className="cancel-new-form-button" onClick={(e) => e.stopPropagation()}>X</Link>
@@ -63,12 +66,12 @@ class NewProject extends React.Component {
                 <div className="list-board-selector">
                     <label className="main-labels">Default view</label><br></br>
                     <label className="radio-label">
-                        <input type="radio" id="list" value={'list'} checked={this.state.default_view === "list"} onChange={this.checker('list').bind(this)} />
+                        <input type="radio" id="list" value={'list'} checked={this.state.default_view === "list"} onChange={this.checker} />
                         <img className="newproject-wig" src={window.listWig} />List
                     </label>
 
                     <br></br><label className="radio-label">
-                        <input type="radio" id="board" value={'board'} checked={this.state.default_view === "board"} onChange={this.checker('board').bind(this)}/>
+                        <input type="radio" id="board" value={'board'} checked={this.state.default_view === "board"} onChange={this.checker}/>
                         <img className="newproject-wig" src={window.boardWig} />Board
                     </label>
 

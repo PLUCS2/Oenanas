@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_10_08_020403) do
+ActiveRecord::Schema.define(version: 2019_10_08_182432) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -36,6 +36,26 @@ ActiveRecord::Schema.define(version: 2019_10_08_020403) do
     t.index ["next_id"], name: "index_sections_on_next_id"
     t.index ["prev_id"], name: "index_sections_on_prev_id"
     t.index ["project_id"], name: "index_sections_on_project_id"
+  end
+
+  create_table "tasks", force: :cascade do |t|
+    t.integer "project_id", null: false
+    t.integer "section_id", null: false
+    t.integer "prev_id"
+    t.integer "next_id"
+    t.integer "creator_id", null: false
+    t.string "title", null: false
+    t.text "description"
+    t.date "due_date"
+    t.string "priority_level"
+    t.string "progress", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["creator_id"], name: "index_tasks_on_creator_id"
+    t.index ["next_id"], name: "index_tasks_on_next_id"
+    t.index ["prev_id"], name: "index_tasks_on_prev_id"
+    t.index ["project_id"], name: "index_tasks_on_project_id"
+    t.index ["section_id"], name: "index_tasks_on_section_id"
   end
 
   create_table "users", force: :cascade do |t|

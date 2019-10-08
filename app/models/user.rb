@@ -30,6 +30,11 @@ class User < ApplicationRecord
         foreign_key: :owner_id, 
         class_name: :Project
 
+    has_many :created_tasks, 
+        primary_key: :id, 
+        foreign_key: :creator_id, 
+        class_name: :Task
+
     def self.find_by_credentials(email, password)
         user = User.find_by(email: email)
         if user && user.is_password?(password)
