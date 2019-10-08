@@ -50,8 +50,8 @@ class ProjectBoard extends React.Component {
                             <div className="hover-project-effect" id="hover-project-effect">Project Actions</div></div>
                         <div className="project-name-dropdown" id="project-name-dropdown">
                             <ul className="project-name-dropdown-list">
-                                <li className="drop-modal-li"><button className="drop-modal-edit-delete" onClick={() => this.props.openModal('edit-project')}>Edit Project</button></li>
-                                <li>DELETE PROJECT</li>
+                                <li className="drop-modal-li"><button className="drop-modal-edit-delete" onClick={() => this.props.openModal({modal: 'edit-project', props: this.props.project.id})}>Edit Project</button></li>
+                                <li><button className="drop-modal-edit-delete" onClick={() => this.props.openModal({modal: 'delete-project', props: this.props.project.id})}>Delete Project</button></li>
                             </ul>
                         </div>
                         <p className="board-date">created on {Date(this.props.project.created_at)}</p>

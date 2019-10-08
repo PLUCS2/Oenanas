@@ -202,3 +202,81 @@
     padding: 5px;  
     margin-top: 8px; 
 }
+
+
+.modal-delete-child {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #fffdfd; 
+  width: 450px; 
+  height: 350px; 
+  overflow-y: auto; 
+  border-radius: 5px; 
+}
+
+
+.modal-delete-x {
+    position: fixed;
+    margin-left: 415px;
+    margin-top: -110px;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+    background: none;
+    font-size: 15px;
+}
+
+.delete-form-header {
+    font-family: gordita, "Helvetica Neue", Helvetica, sans-serif;
+    font-weight: 400;
+    font-size: 20px;
+    margin: 15px;
+    padding: 40px 20px 20px;
+    width: 80%;
+    border-bottom: 2px solid #383a4f; 
+}
+
+.delete-words {
+    width: 85%;
+    margin: 0 auto;
+    height: 150px;
+    margin-top: 25px;
+    font-size: 15px;
+    line-height: 1.4em;
+}
+
+.cancel-and-delete-button-container {
+    display: flex;
+    width: 50%;
+    flex-direction: row;
+    justify-content: space-between;
+    float: right;
+    margin-right: 40px;
+}
+
+.cancel-button {
+    padding: 10px 15px;
+    margin: 0px 10px 20px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.delete-button {
+    margin: 0px 0px 20px 10px;
+    border-radius: 10px;
+    width: 180px;
+    background-color: #fc5263;
+    color: white;
+    border: 1px solid #fc5263;
+    cursor: pointer;
+}
+
+.cancel-button:hover {
+    background-color: lightgray; 
+}
+
+.delete-button:hover {
+    background-color: #cf3d4c;
+}

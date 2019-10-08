@@ -5,9 +5,10 @@ import LoginContainer from '../session/login_container';
 import SignupContainer from '../session/signup_container'; 
 import { receiveErrors } from '../../actions/session_actions';
 import EditProjectContainer from '../project/edit_project_container'; 
+import DeleteProjectContainer from '../project/delete_project_container';
 
 
-function Modal ({ modal, closeModal, receiveErrors }) {
+function Modal ({ modal, closeModal, receiveErrors, props }) {
     if(!modal){
         return null 
     }
@@ -26,7 +27,11 @@ function Modal ({ modal, closeModal, receiveErrors }) {
         }
         case 'edit-project': {
             // debugger; 
-            component = <EditProjectContainer />;
+            component = <EditProjectContainer {...props}/>;
+            break; 
+        }
+        case 'delete-project': {
+            component = <DeleteProjectContainer {...props} />; 
             break; 
         }
         default: 
@@ -37,17 +42,19 @@ function Modal ({ modal, closeModal, receiveErrors }) {
 
     return (
         <div className="modal-background" onClick={closeModal}>
-            <div className="modal-child" onClick={e => e.stopPropagation()}>
+            {/* <div className="modal-child" onClick={e => e.stopPropagation()}> */}
                 {component}
-            </div>
+            {/* </div> */}
         </div>
     )
 }
 
 
 const mapStateToProps = state => {
+    // debugger; 
     return {
-        modal: state.ui.modal
+        modal: state.ui.modal.modal, 
+        props: state.ui.modal.props
     }
 }
 

@@ -1,12 +1,17 @@
 import { OPEN_MODAL, CLOSE_MODAL } from '../actions/modal_actions';
 
-export default function modalReducer(state = null, action) {
-    // debugger; 
+const _defaultState = {
+    modal: null, 
+    props: null
+}
+
+export default function modalReducer(state = _defaultState, action) {
+    debugger; 
     switch (action.type) {
         case OPEN_MODAL:
-            return action.modal; 
+            return {modal: action.modal, props: action.props}; 
         case CLOSE_MODAL:
-            return null;
+            return _defaultState;
         default:
             return state;
     }

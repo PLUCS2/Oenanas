@@ -50,6 +50,7 @@ class Login extends React.Component {
         }); 
 
         return(
+        <div className="modal-child" onClick={e => e.stopPropagation()}>
             <div className="login-form-container">
 
                 <h1 className="auth-form-header">
@@ -78,6 +79,7 @@ class Login extends React.Component {
                 <h3 className="auth-messages">Don't have an account?{this.props.otherForm} </h3>
                 
             </div>
+        </div>
         )
     }
 }

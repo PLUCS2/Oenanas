@@ -3,11 +3,11 @@ import EditProject from './edit_project';
 import { closeModal } from '../../actions/modal_actions'; 
 import { updateProject } from '../../actions/project_actions'; 
 
-const mapStateToProps = (state, ownProps) => {
+const mapStateToProps = state => {
     // debugger; 
-    // let project = state.entities.project[ownProps.match.params.projectId]; 
+    let project = state.entities.projects[state.ui.modal.props]; 
     return {
-        // project 
+        project 
     }
 }
 

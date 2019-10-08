@@ -19,6 +19,7 @@ class Api::ProjectsController < ApplicationController
         @project = Project.create(project_params)
         @project.owner_id = current_user.id 
         if @project.save!
+            debugger 
             render :show
         else 
             render json: @project.errors.full_messages, status: 422

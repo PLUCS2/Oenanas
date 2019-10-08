@@ -43,6 +43,7 @@ class Signup extends React.Component {
         }); 
 
         return(
+        <div className="modal-child" onClick={e => e.stopPropagation()}>
         <div className="signup-form-container">
 
             <button className="modal-x" onClick={this.props.closeModal}>X</button>
@@ -85,6 +86,7 @@ class Signup extends React.Component {
             
             <h3 className="auth-messages" >Already have an account?{this.props.otherForm}</h3>
 
+        </div>
         </div>
         );
     }
