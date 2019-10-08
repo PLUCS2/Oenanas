@@ -1,8 +1,11 @@
 class Api::SectionsController < ApplicationController 
 
     def update 
-       @sections = Project.find(params[:project_id]) 
+    #    @sections = Project.find(params[:project_id]) 
        #I DO NOT KNOW HOW TO UPDATE MY SECTIONS SO THEY ARE DRAG AND DROPABLE 
+       @section = Section.find(section_params[:id])
+       @section.update_attributes(section_params)
+       render :show
     end 
 
     def create 
@@ -22,10 +25,10 @@ class Api::SectionsController < ApplicationController
     end 
 
     def destroy 
-        @section = Section.find(section_params[:id])
+        @section = Section.find(params[:id])
         @section.destroy
-        @project = Project.find(section_params[:project_id])
-        render "api/projects/#{@project.id}"
+        @project = Project.find(@section.project_id)
+        render 'api/projects/show'
         #I will make this after update
     end 
 

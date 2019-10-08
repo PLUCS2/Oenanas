@@ -1,16 +1,18 @@
 class Api::TasksController < ApplicationController 
 
     def create 
+        # debugger
         @task = Task.new(task_params)
-        @task.creator_id = current_user.id 
+        @task.creator_id ||= current_user.id 
         @task.save 
-        @project = Project.find(task_params.project_id)
+        # debugger
+        @project = Project.find(task_params[:project_id])
         @sections = @project.sections
         @tasks = [] 
             @sections.each do |section|
                @tasks += section.tasks
             end 
-        render "api/projects/#{task_params.project_id}"
+        render 'api/projects/show'
     end 
 
     def show 
@@ -20,14 +22,14 @@ class Api::TasksController < ApplicationController
 
     def destroy 
         @task = Task.find(params[:id])
-        @project_id = Project.find(@task.project.id)
-        @project.destroy
-        render "api/projects/#{@project_id}"
+        @project = Project.find(@task.project.id)
+        @task.destroy
+        render 'api/projects/show'
     end 
 
     def update 
         #DO NOT KNOW HOW TO UPDATE PREV AND NEXT YET but that obviously needs to happen LOL
-        @task = Task.find(params[:id])
+        @task = Task.find(task_params[:id])
         @task.update_attributes(task_params)
         render :show
     end 

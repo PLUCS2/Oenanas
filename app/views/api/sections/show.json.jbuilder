@@ -1,6 +1,5 @@
 
-debugger 
-json.extract! @section, :id, :name, :id, :name, :prev_id, :next_id, :project_id :created_at, :updated_at
+json.extract! @section, :id, :name, :id, :name, :prev_id, :next_id, :project_id, :created_at, :updated_at
 
 # if @tasks
     # @tasks.each do |task|
