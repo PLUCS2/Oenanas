@@ -5,13 +5,15 @@ class EditProject extends React.Component {
     constructor(props) {
         super(props); 
         this.state = this.props.project;  
+        // debugger; 
         this.handleChange = this.handleChange.bind(this); 
         this.handleSubmit = this.handleSubmit.bind(this); 
     }
 
     handleSubmit(e) {
         e.preventDefault(); 
-        this.props.updateProject(this.state)
+        this.props.updateProject({project: this.state}); 
+        this.props.closeModal(); 
     }
 
     handleChange(field){
@@ -29,7 +31,7 @@ class EditProject extends React.Component {
                 <button className="modal-x" onClick={this.props.closeModal}>X</button>
                 <form className="edit-form-modal">
                     <label>Name 
-                        <br></br><input className="edit-project-input" type="text" value={this.props.project.title} onChange={this.handleChange("title")}/>
+                        <br></br><input className="edit-project-input" type="text" value={this.state.title} onChange={this.handleChange("title")}/>
                     </label>
 
                     <label>Owned By 
@@ -37,7 +39,7 @@ class EditProject extends React.Component {
                     </label>
 
                     <label>Description
-                        <br></br><input className="edit-project-input" type="text" value={this.props.project.description} onChange={this.handleChange("description")}/>
+                        <br></br><input className="edit-project-input" type="text" value={this.state.description} onChange={this.handleChange("description")}/>
                     </label>
 
                     <button className="auth-form-submit" type="submit" onClick={this.handleSubmit}>Make Changes</button>

@@ -1,4 +1,5 @@
 import React from 'react'; 
+import { withRouter } from 'react-router-dom'; 
 
 class DeleteProject extends React.Component {
 
@@ -9,7 +10,8 @@ class DeleteProject extends React.Component {
 
     handleDelete(e) {
         e.preventDefault(); 
-        this.props.deleteProject(this.props.project.id).then(() => this.props.closeModal()).then(() => this.props.history.push('/home')); 
+        this.props.deleteProject(this.props.project.id).then(() => this.props.history.push('/home')); 
+        this.props.closeModal();
     }
 
     render() {
@@ -34,4 +36,4 @@ class DeleteProject extends React.Component {
 
 }
 
-export default DeleteProject; 
+export default withRouter(DeleteProject); 

@@ -19,7 +19,7 @@ class Api::ProjectsController < ApplicationController
         @project = Project.create(project_params)
         @project.owner_id = current_user.id 
         if @project.save!
-            debugger 
+            # debugger 
             render :show
         else 
             render json: @project.errors.full_messages, status: 422
@@ -27,7 +27,8 @@ class Api::ProjectsController < ApplicationController
     end 
 
     def update 
-        @project = Project.find(params[:project][:id]) 
+        # debugger; 
+        @project = Project.find(project_params[:id]) 
         if @project.update_attributes(project_params)
             render :show 
         else 
@@ -46,7 +47,7 @@ class Api::ProjectsController < ApplicationController
     private 
 
     def project_params 
-        params.require(:project).permit(:title, :owner_id, :default_view, :description)
+        params.require(:project).permit(:id, :title, :owner_id, :default_view, :description)
     end 
 
 end 
