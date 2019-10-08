@@ -30,8 +30,8 @@ class Home extends React.Component {
             if (project.default_view === "list" ){
                 return (
                     <li key={project.id} className="project-list-item">
-                        <img className="list-image" src={window.listWig} /><br></br>
-                        {project.title}
+                        <Link to={`projects/${project.id}/list`}><img className="list-image" src={window.listWig} /><br></br>
+                            {project.title}</Link>
                     </li>
             )} else {
                 return (

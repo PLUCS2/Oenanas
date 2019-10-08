@@ -70,7 +70,7 @@
 .project-heading {
     position: relative; 
     top: -40px; 
-    left: 70px; 
+    left: 60px; 
     font-family: inherit; 
     display: flex; 
     width: 60%;
@@ -80,7 +80,7 @@
 
 .under-border {
     position: relative; 
-    left: 70px; 
+    left: 60px; 
     top: -43px; 
     width: 100%; 
     height: 2px; 
@@ -99,7 +99,7 @@
 .board-date {
     overflow: hidden;
     width: 150px; 
-    height: 12px; 
+    height: 12px;  
     position: absolute; 
     top: 60px; 
     color: #6f7782;
@@ -108,7 +108,7 @@
 
 .board-body {
     width: 95%;
-    margin-left: 72px;
+    margin-left: 60px;
     margin-right: 10px;
     display: flex;
     flex-direction: row;
@@ -161,4 +161,13 @@
     border: none; 
     outline: none; 
     cursor: pointer;
+}
+
+.delete {
+    color: #fc5263; 
+}
+
+.delete:hover {
+    color: red; 
+    font-weight: bold; 
 }
