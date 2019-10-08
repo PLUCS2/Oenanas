@@ -175,3 +175,13 @@
 .error-holder {
     margin: 0 auto; 
 }
+
+.edit-form-header {
+    font-family: gordita, "Helvetica Neue", Helvetica, sans-serif;
+    font-weight: 400; 
+    font-size: 30px; 
+    margin: 10px 20px; 
+    padding: 50px 30px 30px; 
+    width: 85%; 
+    border-bottom: 2px solid #383a4f; 
+}

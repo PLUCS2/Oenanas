@@ -2,6 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux'; 
 import ProjectBoard from './project_board'; 
 import { deleteProject, updateProject, showProject } from '../../actions/project_actions'; 
+import { openModal } from '../../actions/modal_actions'; 
 
 const mapStateToProps = (state, ownProps) => {
     // debugger; 
@@ -15,7 +16,8 @@ const mapDispatchToProps = dispatch => {
     return {
         deleteProject: project => dispatch(deleteProject(project)), 
         updateProject: project => dispatch(updateProject(project)), 
-        showProject: project => dispatch(showProject(project))
+        showProject: project => dispatch(showProject(project)), 
+        openModal: modal => dispatch(openModal(modal))
     }
 }
 

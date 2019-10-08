@@ -91,3 +91,15 @@
     color: #6f7782;
     font-size: 11px; 
 }
+
+.main-board-body {
+    width: 90%;
+    margin-left: 100px; 
+    display: flex; 
+    flex-direction: row; 
+    align-content: space-between; 
+}
+
+.column-board-view {
+    width: 30%; 
+}
