@@ -3,12 +3,22 @@ class Api::SectionsController < ApplicationController
     def update 
     #    @sections = Project.find(params[:project_id]) 
        #I DO NOT KNOW HOW TO UPDATE MY SECTIONS SO THEY ARE DRAG AND DROPABLE 
-       @section = Section.find(section_params[:id])
-       @section.update_attributes(section_params)
-       render :show
+    #    debugger
+        if params[:update_order]
+            new_order = params[:update_order]
+            Section.reorder(new_order)
+            @sections = Section.all 
+            @sections = Section.order_sections(@sections)
+            render :index 
+        else 
+            @section = Section.find(section_params[:id])
+            @section.update_attributes(section_params)
+            render :show
+        end
     end 
 
     def index 
+        debugger
         @sections = Project.find(params[:project_id]).sections
         @sections = Section.order_sections(@sections)
         render :index

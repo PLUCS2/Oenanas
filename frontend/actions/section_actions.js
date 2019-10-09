@@ -1,7 +1,8 @@
-import { destroySection, updateSection, createSection, showSection, allSections } from '../util/section_api_utils'; 
+import { destroySection, updateSection, createSection, showSection, allSections, updateOrder } from '../util/section_api_utils'; 
 
 export const RECEIVE_ALL_SECTIONS = "RECEIVE_ALL_SECTIONS"; 
 export const RECEIVE_SECTION = "RECEIVE_SECTION"; 
+export const CLEAR_SECTIONS = "CLEAR_SECTIONS"; 
 
 export const receiveSections = sections => {
     return {
@@ -14,6 +15,12 @@ export const receiveSection = section => {
     return {
         type: RECEIVE_SECTION, 
         section
+    }
+}
+
+export const clearSections = () => {
+    return {    
+        type: CLEAR_SECTIONS
     }
 }
 
@@ -35,4 +42,8 @@ export const fetchSection = id => dispatch => {
 
 export const fetchSections = projectId => dispatch => {
     return allSections(projectId).then(sections => dispatch(receiveSections(sections)))
+}
+
+export const newOrder = arrOrder => dispatch => {
+    return updateOrder(arrOrder).then(sections => dispatch(receiveSections(sections)))
 }

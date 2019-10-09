@@ -36,3 +36,11 @@ export const allSections = projectId => {
         data: projectId
     })
 }
+
+export const updateOrder = orderArr => {
+    return $.ajax({
+        method: "PATCH",
+        url: `/api/sections/${orderArr[0]}`,
+        data: orderArr
+    })
+}

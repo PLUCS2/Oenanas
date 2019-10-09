@@ -177,4 +177,13 @@
 [data-react-beautiful-dnd-droppable="0"] {
     overflow-anchor: none;
     display: flex;
+    width: 95%;
+    margin-left: 60px;
+    margin-right: 10px;
+    justify-content: space-around;
+    background-color: #f6f8f9;
+    height: 100px;
+    margin-top: -20px;
+    overflow-x: auto;
+    will-change: scroll-position; 
 }

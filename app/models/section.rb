@@ -54,4 +54,24 @@ class Section < ApplicationRecord
         return ans
     end 
 
+    def self.reorder(arr)
+        arr.each_with_index do |id, index|
+            section = Section.find(id)
+            # debugger
+            if index == 0 
+                section.prev_id = nil
+                section.next_id = arr[index + 1]
+            elsif index == arr.length - 1 
+                section.prev_id = arr[index - 1]
+                section.next_id = nil
+            else 
+                section.prev_id = arr[index - 1]
+                section.next_id = arr[index + 1]
+            end 
+            # debugger
+            section.save! 
+            # debugger
+        end 
+    end 
+
 end 

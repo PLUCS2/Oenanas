@@ -1,7 +1,7 @@
 import React from 'react'; 
 import { connect } from 'react-redux'; 
 import SectionBoard from './section_board'; 
-import { fetchSections, fetchSection, deleteSection, makeSection } from '../../actions/section_actions'; 
+import { fetchSections, fetchSection, deleteSection, makeSection, editSection, newOrder, clearSections } from '../../actions/section_actions'; 
 
 const mapStateToProps = (state, ownProps) => {
     // debugger; 
@@ -18,7 +18,10 @@ const mapDispatchToProps = dispatch => {
         fetchSection: id => dispatch(fetchSection(id)), 
         fetchSections: projectId => dispatch(fetchSections(projectId)), 
         deleteSection: id => dispatch(deleteSection(id)), 
-        makeSection: section => dispatch(makeSection(section))
+        makeSection: section => dispatch(makeSection(section)),
+        editSection: section => dispatch(editSection(section)), 
+        newOrder: arr => dispatch(newOrder(arr)), 
+        clearSections: () => dispatch(clearSections())
     }
 }
 
