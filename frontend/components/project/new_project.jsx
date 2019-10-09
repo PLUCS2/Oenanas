@@ -45,7 +45,7 @@ class NewProject extends React.Component {
     }
 
     render() {
-        debugger; 
+        // debugger; 
         return (
         <div>
             <Link to="/home" className="cancel-new-form-button" onClick={(e) => e.stopPropagation()}>X</Link>

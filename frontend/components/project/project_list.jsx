@@ -1,6 +1,7 @@
 import React from 'react';
 import NavBarContainer from '../navbar/navbar_container';
 import HomeSidebaContainer from '../home_side_bar/home_sidebar_container';
+import SectionListContainer from '../section/section_list_container'; 
 
 class ProjectList extends React.Component {
 
@@ -57,6 +58,7 @@ class ProjectList extends React.Component {
                     </div>
                     <div className="under-border"></div>
 
+                    <SectionListContainer projectId={this.props.project.id}/>
 
                 </div>
 

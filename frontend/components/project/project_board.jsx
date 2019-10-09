@@ -1,6 +1,7 @@
 import React from 'react'; 
 import NavBarContainer from '../navbar/navbar_container';
 import HomeSidebaContainer from '../home_side_bar/home_sidebar_container';  
+import SectionBoardContainer from '../section/section_board_container'; 
 
 class ProjectBoard extends React.Component {
 
@@ -59,7 +60,7 @@ class ProjectBoard extends React.Component {
                     <div className="under-border"></div>
         
             <div className="main board-body">
-                <div className="column-boardview">
+                {/* <div className="column-boardview">
                     <h2 className="column-heading-boardview">To Do</h2>
                     <button className="add-task-button">+</button>
                 </div> 
@@ -74,9 +75,12 @@ class ProjectBoard extends React.Component {
                     <button className="add-task-button">+</button>
                 </div> 
 
-                <button className="add-column-board-button">+ Add Column</button>
+                <button className="add-column-board-button">+ Add Column</button> */}
 
+                <SectionBoardContainer projectId={this.props.project.id} /> 
             </div>
+
+
                 </div>
 
             </div>

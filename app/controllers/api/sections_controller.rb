@@ -10,16 +10,20 @@ class Api::SectionsController < ApplicationController
 
     def index 
         @sections = Project.find(params[:project_id]).sections
+        @sections = Section.order_sections(@sections)
         render :index
     end 
 
     def create 
         @section = Section.create(section_params)
+        prev_section = Section.find(@section.prev_id)
+        prev_section.next_id = @section.id 
         # @section.project_id = params[:project_id]
         @section.save 
         # debugger
         project = Project.find(@section.project_id)
         @sections = project.sections
+        @sections = Section.order_sections(@sections)
         render :index
     end 
 

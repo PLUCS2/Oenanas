@@ -149,10 +149,12 @@
 }
 
 .column-heading-boardview {
-    color: #5a8ba4; 
-    margin: 10px; 
-    font-family: inherit; 
-    font-size: 20px; 
+    color: #5a8ba4;
+    margin: 10px;
+    font-family: inherit;
+    font-size: 20px;
+    background: transparent;
+    border: none;
 }
 
 .drop-modal-edit-delete {
