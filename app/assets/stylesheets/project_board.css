@@ -173,3 +173,8 @@
     color: red; 
     font-weight: bold; 
 }
+
+[data-react-beautiful-dnd-droppable="0"] {
+    overflow-anchor: none;
+    display: flex;
+}

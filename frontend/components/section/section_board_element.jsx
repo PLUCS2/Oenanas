@@ -1,5 +1,5 @@
 import React from 'react'; 
-import { DragDropContext } from 'react-beautiful-dnd';
+import { Draggable } from 'react-beautiful-dnd';
 
 class SectionBoardElement extends React.Component {
 

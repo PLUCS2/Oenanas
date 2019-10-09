@@ -2,6 +2,8 @@ import React from 'react';
 import NavBarContainer from '../navbar/navbar_container';
 import HomeSidebaContainer from '../home_side_bar/home_sidebar_container';  
 import SectionBoardContainer from '../section/section_board_container'; 
+import { DragDropContext } from 'react-beautiful-dnd';
+
 
 class ProjectBoard extends React.Component {
 
@@ -59,26 +61,28 @@ class ProjectBoard extends React.Component {
                     </div>
                     <div className="under-border"></div>
         
-            <div className="main board-body">
-                {/* <div className="column-boardview">
-                    <h2 className="column-heading-boardview">To Do</h2>
-                    <button className="add-task-button">+</button>
-                </div> 
+            {/* <DragDropContext onDragEnd={this.dragEnd}> */}
+                {/* <div className="main board-body"> */}
+                    {/* <div className="column-boardview">
+                        <h2 className="column-heading-boardview">To Do</h2>
+                        <button className="add-task-button">+</button>
+                    </div> 
 
-                <div className="column-boardview">
-                    <h2 className="column-heading-boardview">In Progress</h2>
-                    <button className="add-task-button">+</button>
-                </div> 
+                    <div className="column-boardview">
+                        <h2 className="column-heading-boardview">In Progress</h2>
+                        <button className="add-task-button">+</button>
+                    </div> 
 
-                <div className="column-boardview">
-                    <h2 className="column-heading-boardview">Done</h2>
-                    <button className="add-task-button">+</button>
-                </div> 
+                    <div className="column-boardview">
+                        <h2 className="column-heading-boardview">Done</h2>
+                        <button className="add-task-button">+</button>
+                    </div> 
 
-                <button className="add-column-board-button">+ Add Column</button> */}
+                    <button className="add-column-board-button">+ Add Column</button> */}
 
-                <SectionBoardContainer projectId={this.props.project.id} /> 
-            </div>
+                    <SectionBoardContainer projectId={this.props.project.id} /> 
+                {/* </div> */}
+            {/* </DragDropContext> */}
 
 
                 </div>
