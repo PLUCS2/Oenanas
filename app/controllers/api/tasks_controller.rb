@@ -6,13 +6,14 @@ class Api::TasksController < ApplicationController
         @task.creator_id ||= current_user.id 
         @task.save 
         # debugger
-        @project = Project.find(task_params[:project_id])
-        @sections = @project.sections
-        @tasks = [] 
-            @sections.each do |section|
-               @tasks += section.tasks
-            end 
-        render 'api/projects/show'
+        section = Section.find(@task.section_id)
+        @tasks = section.tasks
+        render :index
+    end 
+
+    def index 
+        @tasks = Section.find(params[:section_id]).tasks
+        render :index
     end 
 
     def show 
@@ -22,9 +23,10 @@ class Api::TasksController < ApplicationController
 
     def destroy 
         @task = Task.find(params[:id])
-        @project = Project.find(@task.project.id)
+        section = Section.find(@task.section_id)
         @task.destroy
-        render 'api/projects/show'
+        @tasks = section.tasks
+        render :index
     end 
 
     def update 

@@ -4,13 +4,11 @@ import { receiveCurrentUser } from './session_actions';
 export const RECEIVE_PROJECT = "RECEIVE_PROJECT"; 
 export const RECEIVE_PROJECTS = "RECEIVE_PROJECTS"; 
 
-export const receiveProject = ({project, sections, tasks}) => {
+export const receiveProject = project => {
     debugger; 
     return {
         type: RECEIVE_PROJECT, 
-        project, 
-        sections, 
-        tasks
+        project
     }
 }
 

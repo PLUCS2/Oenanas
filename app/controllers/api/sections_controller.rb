@@ -8,14 +8,19 @@ class Api::SectionsController < ApplicationController
        render :show
     end 
 
+    def index 
+        @sections = Project.find(params[:project_id]).sections
+        render :index
+    end 
+
     def create 
         @section = Section.create(section_params)
         # @section.project_id = params[:project_id]
         @section.save 
         # debugger
-        @project = Project.find(@section.project_id)
-        @sections = @project.sections
-        render 'api/projects/show'
+        project = Project.find(@section.project_id)
+        @sections = project.sections
+        render :index
     end 
 
     def show 
@@ -27,8 +32,9 @@ class Api::SectionsController < ApplicationController
     def destroy 
         @section = Section.find(params[:id])
         @section.destroy
-        @project = Project.find(@section.project_id)
-        render 'api/projects/show'
+        project = Project.find(@section.project_id)
+        @sections = project.sections
+        render :index
         #I will make this after update
     end 
 
