@@ -27,27 +27,41 @@ class SectionBoard extends React.Component {
     }
 
     onDragEnd(result) {
-        debugger; 
+        // debugger; 
         if (!result.destination) {
             return;
         }
 
-        const arr = this.state.order.slice(0); 
-        debugger; 
+        let start = this.state.order.slice(0); 
+        let end = this.state.order.slice(0); 
+
+        let oldIdx = result.source.index; 
+        let newIdx = result.destination.index; 
+        let id = result.draggableId;
+        let a = start.slice(0, oldIdx).concat(end.slice((oldIdx + 1), end.length));
+        a.splice(newIdx, 0, `${id}`)
+
+        // debugger; 
 
         this.setState({
-            order: arr.splice(result.destination.index, 0, arr.splice(result.source.index,1)[0])
+            order: a
         })
 
     }
 
     render() {
 
-        debugger;
+        // debugger;
 
         const idArray = this.state.order || Object.keys(this.props.sections); 
-        const sections = Object.values(this.props.sections).map((section, idx) => {
-            debugger; 
+        const sectionsInOrder = idArray.map(id => {
+            return(
+                this.props.sections[id]
+            )
+        })
+
+        const sections = sectionsInOrder.map((section, idx) => {
+            // debugger; 
             return (
                 <Draggable draggableId={section.id} index={idx} key={section.id}>
                     {(provided) => (
