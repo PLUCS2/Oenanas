@@ -11,7 +11,9 @@ class Api::SectionsController < ApplicationController
         else 
             @section = Section.find(section_params[:id])
             @section.update_attributes(section_params)
-            render :show
+            @sections = Project.find(@section[:project_id]).sections
+            @order_arr = Section.order_sections(@sections)
+            render :index
         end
     end 
 

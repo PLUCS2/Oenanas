@@ -1,7 +1,7 @@
 import { RECEIVE_SECTION, RECEIVE_ALL_SECTIONS, CLEAR_SECTIONS } from '../actions/section_actions'; 
 
 export default (state = {}, action) => {
-    debugger;
+    // debugger;
     Object.freeze(state); 
     switch(action.type){
         case RECEIVE_ALL_SECTIONS: {

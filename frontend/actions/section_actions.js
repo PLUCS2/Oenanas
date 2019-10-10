@@ -30,7 +30,7 @@ export const deleteSection = id => dispatch => {
 }
 
 export const editSection = section => dispatch => {
-    return updateSection(section).then(section => dispatch(receiveSection(section)))
+    return updateSection(section).then(sections => dispatch(receiveSections(sections)))
 }
 
 export const makeSection = section => dispatch => {

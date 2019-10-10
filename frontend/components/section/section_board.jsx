@@ -16,7 +16,7 @@ class SectionBoard extends React.Component {
     componentDidMount() {
         // debugger; 
         this.props.fetchSections({project_id: this.props.projectId}).then(object => {
-            debugger; 
+            // debugger; 
             this.stateSetter(object.sections.order)
         });
     }
@@ -50,7 +50,7 @@ class SectionBoard extends React.Component {
     }
 
     componentWillUnmount() {
-        debugger; 
+        // debugger; 
         this.props.newOrder({update_order: this.state.order}); 
     }
 
