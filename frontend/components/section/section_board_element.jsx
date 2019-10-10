@@ -25,14 +25,14 @@ class SectionBoardElement extends React.Component {
 
     showDelete(e) {
         e.preventDefault(); 
-        document.getElementById("drop-delete-button").className = "show-drop-delete-button";
+        document.getElementById(`drop-delete-button-${this.state.id}`).className = "show-drop-delete-button";
         document.addEventListener("click", this.closeDelete); 
     }
 
     closeDelete(e) {
         e.preventDefault(); 
         if (!e.target.matches(".section-delete-dropdown") && e.target.nodeName != "A") {
-            document.getElementById("drop-delete-button").className = "drop-delete-button";
+        document.getElementById(`drop-delete-button-${this.state.id}`).className = "drop-delete-button";
             document.removeEventListener("click", this.closeDelete);
         }
     }
@@ -48,8 +48,8 @@ class SectionBoardElement extends React.Component {
                 onChange={this.changeSectionName} />
             <div className="section-delete-dropdown">
                 <button className="delete-section" onClick={this.showDelete}>...</button>
-                    <div id="drop-delete-button" className="drop-delete-button">
-                        <button>Delete Section</button>
+                    <div id={`drop-delete-button-${this.props.section.id}`} className="drop-delete-button">
+                        <button className="delete-section-button">Delete</button>
                     </div>
             </div>
             </>
