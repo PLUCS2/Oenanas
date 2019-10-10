@@ -158,6 +158,13 @@
     outline: none; 
 }
 
+.column-heading-boardview:focus {
+    width: 80%; 
+    background-color: white; 
+    border: 1px solid #5a8ba4;
+    border-radius: 3px; 
+}
+
 .drop-modal-edit-delete {
     width: 150px; 
     background: none; 
@@ -187,4 +194,12 @@
     margin-top: -20px;
     overflow-x: auto;
     will-change: scroll-position; 
+}
+
+.drop-delete-button {
+    display: none; 
+}
+
+.show-drop-delete-button {
+    display: block; 
 }
