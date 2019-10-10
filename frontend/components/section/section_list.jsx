@@ -13,7 +13,7 @@ class SectionList extends React.Component {
 
     render() {
 
-        debugger; 
+        // debugger; 
         const sections = Object.values(this.props.sections).map(section => {
             return (
                 <div key={section.id} >
@@ -22,7 +22,7 @@ class SectionList extends React.Component {
             )
         })
 
-        debugger;
+        // debugger;
 
         return (
             <h3>Hi, this is the section component for List

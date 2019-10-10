@@ -8,7 +8,7 @@ class SectionBoard extends React.Component {
         super(props); 
         // debugger; 
         this.state = {
-            order: Object.keys(this.props.sections)
+            order: this.props.sections.order
         }
         this.onDragEnd = this.onDragEnd.bind(this);
     }
@@ -17,7 +17,7 @@ class SectionBoard extends React.Component {
         // debugger; 
         this.props.fetchSections({project_id: this.props.projectId}).then(object => {
             debugger; 
-            this.stateSetter(Object.keys(object.sections))
+            this.stateSetter(object.sections.order)
         });
     }
 
@@ -50,15 +50,15 @@ class SectionBoard extends React.Component {
     }
 
     componentWillUnmount() {
+        debugger; 
         this.props.newOrder({update_order: this.state.order}); 
-        this.props.clearSections(); 
     }
 
     render() {
 
         // debugger;
 
-        const idArray = this.state.order || Object.keys(this.props.sections); 
+        const idArray = this.state.order || []; 
         const sectionsInOrder = idArray.map(id => {
             return(
                 this.props.sections[id]
@@ -66,7 +66,7 @@ class SectionBoard extends React.Component {
         })
 
         const sections = sectionsInOrder.map((section, idx) => {
-            debugger; 
+            // debugger; 
             return (
                 <Draggable draggableId={section.id} index={idx} key={section.id}>
                     {(provided) => (

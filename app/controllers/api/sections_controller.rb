@@ -7,9 +7,7 @@ class Api::SectionsController < ApplicationController
         if params[:update_order]
             new_order = params[:update_order]
             Section.reorder(new_order)
-            @sections = Section.all 
-            @sections = Section.order_sections(@sections)
-            render :index 
+            render json: { message: "updated" }, status: :ok
         else 
             @section = Section.find(section_params[:id])
             @section.update_attributes(section_params)
@@ -18,9 +16,11 @@ class Api::SectionsController < ApplicationController
     end 
 
     def index 
-        debugger
+        # debugger
         @sections = Project.find(params[:project_id]).sections
-        @sections = Section.order_sections(@sections)
+        # debugger
+        @order_arr = Section.order_sections(@sections)
+        # debugger
         render :index
     end 
 

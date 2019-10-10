@@ -27,7 +27,7 @@ class Section < ApplicationRecord
         
     def self.order_sections(sections, prev_id = nil)
         # debugger
-        return [sections[0]] if sections.length == 1 
+        return [sections[0][:id]] if sections.length == 1 
         return [] if sections.empty? 
 
         ans = []
@@ -37,7 +37,7 @@ class Section < ApplicationRecord
                 if section[:prev_id] == nil 
                     new_sections = sections - [section]
                     # debugger
-                    ans = [section] + Section.order_sections(new_sections, section[:next_id])
+                    ans = [section[:id]] + Section.order_sections(new_sections, section[:next_id])
                     return ans 
                 end 
             end
@@ -45,7 +45,7 @@ class Section < ApplicationRecord
             sections.each do |section|
                 if section[:id] == prev_id
                     new_sections = sections - [section]
-                    ans = [section] + Section.order_sections(new_sections, section[:next_id])
+                    ans = [section[:id]] + Section.order_sections(new_sections, section[:next_id])
                     return ans 
                 end 
             end 

@@ -5,6 +5,7 @@ export const RECEIVE_SECTION = "RECEIVE_SECTION";
 export const CLEAR_SECTIONS = "CLEAR_SECTIONS"; 
 
 export const receiveSections = sections => {
+    // debugger; 
     return {
         type: RECEIVE_ALL_SECTIONS, 
         sections
