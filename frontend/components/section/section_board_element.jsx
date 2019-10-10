@@ -10,6 +10,7 @@ class SectionBoardElement extends React.Component {
         this.updateSecName = this.updateSecName.bind(this); 
         this.showDelete = this.showDelete.bind(this); 
         this.closeDelete = this.closeDelete.bind(this); 
+        this.deleteThis = this.deleteThis.bind(this); 
         // debugger; 
     }
 
@@ -37,6 +38,12 @@ class SectionBoardElement extends React.Component {
         }
     }
 
+    deleteThis(e) {
+        e.preventDefault(); 
+        // debugger;
+        this.props.otherProps.deleteSection(this.state.id); 
+    }
+
     render() {
         return(
             <>
@@ -49,7 +56,7 @@ class SectionBoardElement extends React.Component {
             <div className="section-delete-dropdown">
                 <button className="delete-section" onClick={this.showDelete}>...</button>
                     <div id={`drop-delete-button-${this.props.section.id}`} className="drop-delete-button">
-                        <button className="delete-section-button">Delete</button>
+                        <button className="delete-section-button" onClick={this.deleteThis}>Delete</button>
                     </div>
             </div>
             </>

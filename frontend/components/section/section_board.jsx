@@ -8,7 +8,7 @@ class SectionBoard extends React.Component {
         super(props); 
         // debugger; 
         this.state = {
-            order: this.props.sections.order
+            order: this.props.sections.order || []
         }
         this.onDragEnd = this.onDragEnd.bind(this);
     }
@@ -58,12 +58,22 @@ class SectionBoard extends React.Component {
 
         // debugger;
 
-        const idArray = this.state.order || []; 
+        let updateId; 
+        // debugger; 
+        if (this.props.sections.order && (this.state.order.length > this.props.sections.order.length)){
+            updateId = this.props.sections.order
+        } else {
+            updateId = this.state.order
+        }
+
+        const idArray = updateId || []; 
         const sectionsInOrder = idArray.map(id => {
             return(
                 this.props.sections[id]
             )
         })
+
+        // debugger; 
 
         const sections = sectionsInOrder.map((section, idx) => {
             // debugger; 

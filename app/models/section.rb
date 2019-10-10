@@ -74,4 +74,33 @@ class Section < ApplicationRecord
         end 
     end 
 
+    def update_surroundings 
+        # debugger 
+        if self.prev_id 
+            last = Section.find(self.prev_id)
+            last_id = last.id
+        else 
+            last_id = nil
+        end 
+
+        if self.next_id 
+            forward = Section.find(self.next_id)
+            forward_id = forward.id
+        else 
+            forward_id = nil 
+        end 
+
+        # debugger
+        if last 
+            last.next_id = forward_id
+            last.save! 
+        end 
+
+        if forward 
+            forward.prev_id = last_id
+            forward.save! 
+        end 
+        # debugger
+    end 
+
 end 
