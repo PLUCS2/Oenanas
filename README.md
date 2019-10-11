@@ -25,7 +25,7 @@ Oenana is a clone of [Asana](https://asana.com/). The app allows users to create
 - Components only update backend when component unmounts to decrease time complexity
 
 ##### Model for Sections: 
-- self.order_sections: 
+- self.order_sections:  
 ⋅⋅* orders the sections to pass to frontend on Project show page 
 - self.reorder: 
 ⋅⋅* updates previous and next id's of sections on the backend when Project component unmounts 
