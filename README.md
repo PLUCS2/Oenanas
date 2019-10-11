@@ -27,6 +27,8 @@ Oenana is a clone of [Asana](https://asana.com/). The app allows users to create
 - When passed to the frontend sections are ordered based on previous_id's and next_id's (stored and updated in the database)
 - Components only update backend when component unmounts to decrease time complexity
 
+![](app/assets/images/section_drag_and_drop.gif)
+
 ##### Model for Sections: 
 - self.order_sections:  
   * orders the sections to pass to frontend on Project show page 
