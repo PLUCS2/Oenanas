@@ -130,12 +130,12 @@ end
 ````
 
 ##### Frontend Component for Sections: 
-- self.order_sections:  
-  * orders the sections to pass to frontend on Project show page 
-- self.reorder: 
-  * updates previous and next id's of sections on the backend when Project component unmounts 
-- update_surroundings: 
-  * updates prior and post section id's when a section is deleted
+- onDragEnd():  
+  * Sets the state to the new order of the sections 
+- componentWillUnmount(): 
+  * Passes state (the final order of moved sections) to the backend to update section previous and next id's
+- render(): 
+  * Iterates through state to mount section components in order
 
 ````
 class SectionBoard extends React.Component {
@@ -183,7 +183,6 @@ class SectionBoard extends React.Component {
     }
 
     render() {
-
         let updateId; 
 
         if (this.props.sections.order && (this.state.order.length > this.props.sections.order.length)){
