@@ -19,7 +19,7 @@ Oenana is a clone of [Asana](https://asana.com/). The app allows users to create
 - Signup checks for a unique email address
 - Invalid credentials will trigger frontend and backend errors 
 
-![](app/assets/images/Login_and_Signup.mov)
+![](app/assets/images/login_and_signup.gif)
 
 ### Drag and Drop Sections 
 - Sections can be moved around on the page and retain their new positions
