@@ -9,6 +9,7 @@ Oenana is a clone of [Asana](https://asana.com/). The app allows users to create
 - Ruby on Rails
 - PostgresSQL
 - Javascript
+- React Beautiful DND (Drag and Drop)
 
 ## Key Features:
 [Design Docs](https://github.com/PLUCS2/Oenanas/wiki)
@@ -32,7 +33,8 @@ Oenana is a clone of [Asana](https://asana.com/). The app allows users to create
 - update_surroundings: 
   * updates prior and post section id's when a section is deleted
 
-````class Section < ApplicationRecord 
+````
+class Section < ApplicationRecord 
 
     validates :name, :project_id, presence: true 
 
@@ -125,6 +127,110 @@ Oenana is a clone of [Asana](https://asana.com/). The app allows users to create
     end 
 
 end
+````
+
+##### Frontend Component for Sections: 
+- self.order_sections:  
+  * orders the sections to pass to frontend on Project show page 
+- self.reorder: 
+  * updates previous and next id's of sections on the backend when Project component unmounts 
+- update_surroundings: 
+  * updates prior and post section id's when a section is deleted
+
+````
+class SectionBoard extends React.Component {
+
+    constructor(props) {
+        super(props); 
+        this.state = {
+            order: this.props.sections.order || []
+        }
+        this.onDragEnd = this.onDragEnd.bind(this);
+    }
+
+    componentDidMount() {
+        this.props.fetchSections({project_id: this.props.projectId}).then(object => {
+            this.stateSetter(object.sections.order)
+        });
+    }
+
+    stateSetter(orders){
+        this.setState({ order: orders }); 
+    }
+
+    onDragEnd(result) {
+        if (!result.destination) {
+            return;
+        }
+
+        let start = this.state.order.slice(0); 
+        let end = this.state.order.slice(0); 
+
+        let oldIdx = result.source.index; 
+        let newIdx = result.destination.index; 
+        let id = result.draggableId;
+        let a = start.slice(0, oldIdx).concat(end.slice((oldIdx + 1), end.length));
+        a.splice(newIdx, 0, `${id}`)
+
+        this.setState({
+            order: a
+        })
+
+    }
+
+    componentWillUnmount() {
+        this.props.newOrder({update_order: this.state.order}); 
+    }
+
+    render() {
+
+        let updateId; 
+
+        if (this.props.sections.order && (this.state.order.length > this.props.sections.order.length)){
+            updateId = this.props.sections.order
+        } else {
+            updateId = this.state.order
+        }
+
+        const idArray = updateId || []; 
+        const sectionsInOrder = idArray.map(id => {
+            return(
+                this.props.sections[id]
+            )
+        })
+
+        const sections = sectionsInOrder.map((section, idx) => {
+            return (
+                <Draggable draggableId={section.id} index={idx} key={section.id}>
+                    {(provided) => (
+                        <div className="column-boardview" {...provided.draggableProps} ref={provided.innerRef} {...provided.dragHandleProps}>
+                            <SectionBoardElement 
+                            section={section} 
+                            otherProps={this.props} 
+                            prevId={Object.keys(this.props.sections)[idArray.indexOf(`${section.id}`)-1]}
+                            {...provided.dragHandleProps}/> 
+                        </div>
+                    )}
+                </Draggable>
+            )
+        })
+
+        return (
+            <DragDropContext onDragEnd={this.onDragEnd}>
+                <Droppable droppableId="all-columns" direction="horizontal">
+                    { (provided) => (
+                        <div {...provided.droppableProps} ref={provided.innerRef}>
+                            {sections}
+                            {provided.placeholder}
+                        </div>
+                    )}
+                </Droppable>
+            </DragDropContext >
+        )
+    }
+}
+
+export default SectionBoard; 
 ````
 
 
