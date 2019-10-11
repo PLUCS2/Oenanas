@@ -26,11 +26,11 @@ Oenana is a clone of [Asana](https://asana.com/). The app allows users to create
 
 ##### Model for Sections: 
 - self.order_sections:  
-⋅⋅* orders the sections to pass to frontend on Project show page 
+  * orders the sections to pass to frontend on Project show page 
 - self.reorder: 
-⋅⋅* updates previous and next id's of sections on the backend when Project component unmounts 
+  * updates previous and next id's of sections on the backend when Project component unmounts 
 - update_surroundings: 
-⋅⋅* updates prior and post section id's when a section is deleted
+  * updates prior and post section id's when a section is deleted
 
 ````class Section < ApplicationRecord 
 
