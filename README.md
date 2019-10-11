@@ -1,24 +1,33 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+[Find oenana here](https://oenana.herokuapp.com/#/)
 
-Things you may want to cover:
+Oenana is a clone of [Asana](https://asana.com/). The app allows users to create projects, add sections to those projects, and add tasks to those sections. The sections and tasks can be reorganized by dragging and dropping them into new positins. These projects can eigher be private or shared with a team. In the instances where teams choose to work on projects together, tasks can be assigned to different team members. 
 
-* Ruby version
+##Technologies:
+- React / Redux
+- Ruby on Rails
+- PostgresSQL
+- Javascript
 
-* System dependencies
+##Key Features:
+[Design Docs](https://github.com/PLUCS2/Oenanas/wiki)
 
-* Configuration
+### User Authentication
+- Users can login with an existing account, or create an account by signing up 
+- Signup checks for a unique email address
+- Invalid credentials will trigger frontend and backend errors 
 
-* Database creation
+## Drag and Drop Sections 
 
-* Database initialization
 
-* How to run the test suite
+##Why Oenana?##
 
-* Services (job queues, cache servers, search engines, etc.)
 
-* Deployment instructions
+##Future Implementations:
+- List project view 
+- Tasks 
+- Companies 
+- Teams 
+- Privacy settings
 
-* ...
